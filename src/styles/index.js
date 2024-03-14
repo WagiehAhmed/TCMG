@@ -55,7 +55,7 @@ export const CustomDrawer = styled(Drawer)(() => ({
 
 export const CustomBox = styled(Box)(() => ({
   boxSizing: "border-box",
-  border: "2px solid red",
+  // border: "2px solid red",
   padding: "10px",
 
   "&.first-section": {
@@ -64,7 +64,8 @@ export const CustomBox = styled(Box)(() => ({
     justifyContent: "center",
     alignItem: "flex-start",
     backgroundColor: "#002240",
-    height: "70vh",
+    height: "700px",
+    // height: "70vh",
     padding: "5vw",
   },
 
@@ -77,7 +78,7 @@ export const CustomBox = styled(Box)(() => ({
     // height: "75vh",
     // padding: "0px 5vw",
   },
-  "&.forth-section": {
+  "&.section-four": {
     backgroundColor: "#0A1328",
   },
 
@@ -89,14 +90,14 @@ export const CustomBox = styled(Box)(() => ({
     backgroundColor: "#0A1328",
   },
 
-  "&.frs-p1,.ffs-p1": {
+  "&.section-four-p1,&.section-five-p1,&.section-eleven-p1": {
     height: "100%",
     padding: "0px",
     padding: "20px 5px",
     // overflowY: "hidden",
   },
 
-  "&.frs-p2,.ffs-p2": {
+  "&.section-four-p2,&.section-five-p2,&.section-eleven-p2": {
     padding: "0px",
     "&::-webkit-scrollbar": {
       width: "0px",
@@ -110,6 +111,12 @@ export const CustomBox = styled(Box)(() => ({
   },
   "&.footer": {
     backgroundColor: "#0A1328",
+  },
+  "&.section-eleven": {
+    backgroundColor: "#0D1B36",
+  },
+  "&.section-tweleve": {
+    backgroundColor: "#0D1B36",
   },
 }));
 
@@ -125,7 +132,7 @@ export const CustomImageContainer = styled(Box)(() => ({
   height: "70px",
   boxSizing: "border-box",
 
-  "&.frs-image": {
+  "&.section-four-image, &.section-five-image": {
     width: "100%",
     height: "400px",
   },
@@ -144,19 +151,23 @@ export const CustomImageContainer = styled(Box)(() => ({
     height: "400px",
   },
 
-  border: "2px solid blacK",
+  "&.section-tweleve-image-container": {
+    width: "100%",
+    height: "600px",
+  },
+
+  // border: "2px solid blacK",
 }));
 export const CustomImage = styled("img")(({ src }) => ({
   src: `url(${src})`,
   width: "100%",
   height: "100%",
   objectFit: "fill",
-  //  maxWidth: "inherit",
-  // maxHeight: "inherit",
-  // height: "inherit",
-  // width: "inherit",
   boxSizing: "border-box",
-  border: "2px solid green",
+  // border: "2px solid green",
+  "&.logo-image,&.section-tweleve-image": {
+    objectFit: "cover",
+  },
 }));
 
 //forms
@@ -180,7 +191,7 @@ export const CustomFormControl = styled(FormControl)(() => ({
   justifyContent: "flex-start",
   // padding: sizes.md ? "10px" : "20px",
   //   boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
-  border: "2px solid red",
+  // border: "2px solid red",
 }));
 
 export const CustomTextFeild = styled(TextField)(() => ({
@@ -193,7 +204,7 @@ export const CustomTextFeild = styled(TextField)(() => ({
   "&.search": {
     backgroundColor: "white",
     color: "black",
-    minWidth:"400px",
+    minWidth: "400px",
     borderRadius: "10px",
 
     "& .MuiInputBase-root": {
@@ -204,7 +215,6 @@ export const CustomTextFeild = styled(TextField)(() => ({
       padding: "10px ",
       borderRadius: "10px",
     },
-
 
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
@@ -218,11 +228,8 @@ export const CustomTextFeild = styled(TextField)(() => ({
         margin: "-1px",
         borderColor: "white",
       },
-    }
-    
+    },
   },
-
-
 
   "& label": {
     color: "white",
@@ -267,14 +274,14 @@ export const IconContainer = styled(IconButton)(() => ({
     color: "black",
   },
   "&.arrow-icon": {
-    border: "1px solid gold",
+    // border: "1px solid gold",
     margin: "0px 5px",
   },
   "&.footer-icon": {
-    border:"2px solid white",
+    // border: "2px solid white",
   },
   "&:hover": {
-    backgroundColor: "red",
+    backgroundColor: "rgba(50,100,255,0.2)",
   },
 }));
 
@@ -299,34 +306,36 @@ export const CustomStack = styled(Stack)(() => ({
     justifyContent: "space-between",
   },
   "&.footer-horizontal1": {
-    width:"100%",
-    alignItems:"center",
+    width: "100%",
+    alignItems: "center",
     justifyContent: "space-around",
   },
   "&.footer-horizontal2": {
-    alignItems:"center",
+    alignItems: "center",
     justifyContent: "space-evenly",
   },
   "&.footer-horizontal22": {
-    minWidth:"300px",
+    minWidth: "300px",
     justifyContent: "space-evenly",
   },
   "&.footer-horizontal3": {
-    padding:"10px 0px",
+    padding: "10px 0px",
     alignItems: "center",
     justifyContent: "space-evenly",
   },
 
-  "&.frs-container,&.ffs-container": {
-    justifyContent: "center",
-    alignItems: "center",
-  },
+  "&.section-four-container,&.section-five-container,&.section-eleven-container":
+    {
+      justifyContent: "center",
+      alignItems: "flex-start",
+    },
 
-  "&.frs-subContainer,&.ffs-subContainer": {
-    flexDirection: "column",
-    alignItems: "center",
-    maxHeight: "100%",
-  },
+  "&.section-four-subContainer,&.section-five-subContainer,&.section-eleven-subContainer":
+    {
+      flexDirection: "column",
+      alignItems: "center",
+      maxHeight: "100%",
+    },
 
   "&.sis-container": {
     // justifyContent: "center",
@@ -370,17 +379,17 @@ export const CustomTypography = styled(Typography)(() => ({
   "&.ts-secondary": {
     width: "80%",
   },
-  "&.frs-primary": {
+  "&.section-four-primary": {
     margin: "10px 0px",
   },
-  "&.frs-secondary": {
+  "&.section-four-secondary": {
     lineHeight: "30px",
   },
-  "&.ffs-primary": {
+  "&.section-five-primary": {
     margin: "10px 0px",
     color: "#845F38",
   },
-  "&.ffs-secondary": {
+  "&.section-five-secondary": {
     lineHeight: "30px",
   },
   "&.sis-primary": {
@@ -388,8 +397,8 @@ export const CustomTypography = styled(Typography)(() => ({
   },
   "&.footer-last": {
     textAlign: "center",
-    maxWidth:"600px",
-    minWidth:"300px"
+    maxWidth: "600px",
+    minWidth: "300px",
   },
 }));
 

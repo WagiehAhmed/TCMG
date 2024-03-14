@@ -50,8 +50,8 @@ const AppBar = ({ openSideDrawer ,sizes}) => {
         </CustomForm>
 
         {/* modile logo */}
-        <CustomImageContainer sx={{display:sizes.md?'inl;ine-flex':'none'}} >
-          <CustomImage src="../images/logo.png" alt="logo" />
+        <CustomImageContainer sx={{display:sizes.md?'inline-flex':'none'}} >
+          <CustomImage src="../images/logo.png" alt="logo" className="logo-image"/>
         </CustomImageContainer>
 
         {/* languages */}
@@ -63,7 +63,7 @@ const AppBar = ({ openSideDrawer ,sizes}) => {
 
         {/* disktop logo */}
         <CustomImageContainer sx={{display:sizes.md?'none':'inline-flex'}} sizes={sizes}>
-          <CustomImage src="../images/logo.png" alt="logo" />
+          <CustomImage src="../images/logo.png" alt="logo" className="logo-image"/>
         </CustomImageContainer>
       </CustomToolBar>
     </CustomAppBar>

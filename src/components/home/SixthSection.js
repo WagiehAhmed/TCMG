@@ -75,18 +75,19 @@ const SixthSection = ({ sizes }) => {
             padding: "10px",
             margin: "10px 0px",
             boxSizing: "border-box",
-            border: "2px solid green",
+            // border: "2px solid green",
           }}
         >
           <Slider {...settings}>
-            <Box sx={{ border: "2px solid green" }}>
+            <Box>
+            {/* <Box sx={{ border: "2px solid green" }}> */}
               <Box
                 sx={{
                   height: "330px",
                   padding: "15px",
                   maxWidth: "250px",
                   margin: "0px auto",
-                  border: "2px solid yellow",
+                  // border: "2px solid yellow",
                   backgroundColor: "rgba(255,255,255,0.1)",
                 }}
               >
@@ -116,14 +117,16 @@ const SixthSection = ({ sizes }) => {
               </Box>
             </Box>
           
-            <Box sx={{ border: "2px solid green" }}>
+            <Box>
+
+            {/* <Box sx={{ border: "2px solid green" }}> */}
               <Box
                 sx={{
                   height: "330px",
                   padding: "15px",
                   maxWidth: "250px",
                   margin: "0px auto",
-                  border: "2px solid yellow",
+                  // border: "2px solid yellow",
                   backgroundColor: "rgba(255,255,255,0.1)",
                 }}
               >

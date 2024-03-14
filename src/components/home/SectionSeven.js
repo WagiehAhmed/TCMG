@@ -12,7 +12,7 @@ import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import Slider from "react-slick";
 import { Box, Card, CardMedia, Stack, Typography } from "@mui/material";
 
-const  SectionSeven = ({ sizes }) => {
+const SectionSeven = ({ sizes }) => {
   var settings = {
     dots: false,
     arrows: false,
@@ -60,7 +60,7 @@ const  SectionSeven = ({ sizes }) => {
 
         <Box
           sx={{
-            border: "2px solid green",
+            // border: "2px solid green",
             width: "100%",
             boxSizing: "border-box",
             padding: "10px",
@@ -68,19 +68,24 @@ const  SectionSeven = ({ sizes }) => {
           }}
         >
           <Slider {...settings}>
-            
             {/* silde */}
-            <Box sx={{ border: "2px solid green" }}>
+            <Box>
+              {/* <Box sx={{ border: "2px solid green" }}> */}
               <Box
                 sx={{
                   maxHeight: "330px",
                   maxWidth: "250px",
                   margin: "0px auto",
-                  border: "2px solid yellow",
+                  // border: "2px solid yellow",
                   backgroundColor: "rgba(255,255,255,0.1)",
                 }}
               >
-                <CustomStack className="horizontal">
+                <CustomStack
+                  className="horizontal"
+                  sx={{
+                    padding: "0px 5px",
+                  }}
+                >
                   <CustomAvatar src="../images/استثمر في مصر.png" />
                   <Stack>
                     <Typography
@@ -108,9 +113,9 @@ const  SectionSeven = ({ sizes }) => {
                 <Box
                   sx={{
                     backgroundColor: "white",
-                    padding:"10px 5px",
-                    marginTop:"10px",
-                    borderRadius:"30px 0px 0px 0px"
+                    padding: "10px 5px",
+                    marginTop: "10px",
+                    borderRadius: "30px 0px 0px 0px",
                   }}
                 >
                   <CustomTypography
@@ -131,17 +136,23 @@ const  SectionSeven = ({ sizes }) => {
             </Box>
 
             {/* silde */}
-            <Box sx={{ border: "2px solid green" }}>
+            <Box>
+              {/* <Box sx={{ border: "2px solid green" }}> */}
               <Box
                 sx={{
                   maxHeight: "330px",
                   maxWidth: "250px",
                   margin: "0px auto",
-                  border: "2px solid yellow",
+                  // border: "2px solid yellow",
                   backgroundColor: "rgba(255,255,255,0.1)",
                 }}
               >
-                <CustomStack className="horizontal">
+                <CustomStack
+                  className="horizontal"
+                  sx={{
+                    padding: "0px 5px",
+                  }}
+                >
                   <CustomAvatar src="../images/استثمر في مصر.png" />
                   <Stack>
                     <Typography
@@ -169,9 +180,9 @@ const  SectionSeven = ({ sizes }) => {
                 <Box
                   sx={{
                     backgroundColor: "white",
-                    padding:"10px 5px",
-                    marginTop:"10px",
-                    borderRadius:"30px 0px 0px 0px"
+                    padding: "10px 5px",
+                    marginTop: "10px",
+                    borderRadius: "30px 0px 0px 0px",
                   }}
                 >
                   <CustomTypography
@@ -190,8 +201,6 @@ const  SectionSeven = ({ sizes }) => {
                 </Box>
               </Box>
             </Box>
-
-
           </Slider>
         </Box>
 

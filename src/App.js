@@ -16,6 +16,7 @@ import SectionEight from "./components/home/SectionEight";
 import SectionNine from "./components/home/SectionNine";
 import SectionEleven from "./components/home/ٍSectionEleven";
 import Footer from "./components/home/Footer";
+import SectionTweleve from "./components/home/SectionTweleve";
 
 function App() {
   // use media hook to get access to different screens
@@ -34,11 +35,13 @@ function App() {
   };
 
   return (
-    <Box sx={{ border: "2px solid yellow" }}>
+    <Box>
+    {/* <Box sx={{ border: "2px solid yellow" }}> */}
       <AppBar openSideDrawer={sideDrawerTrigger} sizes={matches} />
       <Toolbar />
       <SideDrawer open={openSideDrawer} onClose={sideDrawerTrigger} />
-      <Box sx={{ border: "2px solid red", zIndex: -1 }}>
+      <Box sx={{ zIndex: -1 }}>
+      {/* <Box sx={{ border: "2px solid red", zIndex: -1 }}> */}
         <FirstSection sizes={matches} />
         <SecondSection sizes={matches} />
         <ThirdSection sizes={matches} />
@@ -50,6 +53,7 @@ function App() {
         <SectionNine sizes={matches} />
         <SectionEight sizes={matches} />
         <SectionEleven sizes={matches} />
+        <SectionTweleve sizes={matches} />
         <Footer sizes={matches} />
       </Box>
     </Box>

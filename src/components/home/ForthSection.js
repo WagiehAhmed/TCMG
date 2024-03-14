@@ -13,9 +13,9 @@ import { Box } from "@mui/material";
 
 const ForthSection = ({ sizes }) => {
   return (
-    <CustomBox className="forth-section" >
-      <CustomStack className="frs-container"sx={{flexDirection: sizes.md ? "column" : "row",}}>
-        <CustomBox className="frs-p1" sx={{width: sizes.md ? "100%" : "55%"}}>
+    <CustomBox className="section-four" >
+      <CustomStack className="section-four-container"sx={{flexDirection: sizes.md ? "column" : "row",}}>
+        <CustomBox className="section-four-p1" sx={{width: sizes.md ? "100%" : "55%"}}>
           <CustomTypography
             gutterBottom
             className="fs-primary"
@@ -49,8 +49,8 @@ const ForthSection = ({ sizes }) => {
             </IconContainer>
           </Box>
         </CustomBox>
-        <CustomBox className="frs-p2" sx={{width: sizes.md ? "100%" : "45%",maxHeight:sizes.md ? "100%" : "550px"}}>
-          <CustomStack className="frs-subContainer">
+        <CustomBox className="section-four-p2" sx={{width: sizes.md ? "100%" : "45%",maxHeight:sizes.md ? "100%" : "680px"}}>
+          <CustomStack className="section-four-subContainer">
             <Box
               sx={{
                 display: "flex",
@@ -60,22 +60,23 @@ const ForthSection = ({ sizes }) => {
                 height: "fit-content",
                 margin: sizes.md?"15px 0px":"30px 0px",
                 width: sizes.md?"100%":"80%",
+                'scroll-snap-align':"center",
               }}
             >
-              <CustomImageContainer className="frs-image" sizes={sizes}>
+              <CustomImageContainer className="section-four-image" sizes={sizes}>
                 <CustomImage src="../images/تأسيس شركات.png" />
               </CustomImageContainer>
 
               <CustomTypography
                 gutterBottom
-                className="frs-primary"
+                className="section-four-primary"
                 variant={sizes.sm ? "h5" : "h6"}
               >
                 تأسيس شركات
               </CustomTypography>
               <CustomTypography
                 gutterBottom
-                className="frs-secondary"
+                className="section-four-secondary"
                 variant={sizes.sm ? "h6" : "p"}
               >
                 هل ترغب في تأسيس شركة في مصر؟نعمل علي تقديم الدعم لأعمال الشركات
@@ -107,22 +108,23 @@ const ForthSection = ({ sizes }) => {
                 height: "fit-content",
                 margin: sizes.md?"15px 0px":"30px 0px",
                 width: sizes.md?"100%":"80%",
+                'scroll-snap-align':"center",
               }}
             >
-              <CustomImageContainer className="frs-image" sizes={sizes}>
+              <CustomImageContainer className="section-four-image" sizes={sizes}>
                 <CustomImage src="../images/الاستشارا القانونية.png" />
               </CustomImageContainer>
 
               <CustomTypography
                 gutterBottom
-                className="frs-primary"
+                className="section-four-primary"
                 variant={sizes.sm ? "h5" : "h6"}
               >
                 الاستشارات القانونية
               </CustomTypography>
               <CustomTypography
                 gutterBottom
-                className="frs-secondary"
+                className="section-four-secondary"
                 variant={sizes.sm ? "h6" : "p"}
               >
                 نفخر بتقديم الاستشارات القانونية من مستشار قانوني محنك مع الدعم
@@ -154,22 +156,23 @@ const ForthSection = ({ sizes }) => {
                 height: "fit-content",
                 margin: sizes.md?"15px 0px":"30px 0px",
                 width: sizes.md?"100%":"80%",
+                'scroll-snap-align':"center",
               }}
             >
-              <CustomImageContainer className="frs-image" sizes={sizes}>
+              <CustomImageContainer className="section-four-image" sizes={sizes}>
                 <CustomImage src="../images/استثمر في مصر.png" />
               </CustomImageContainer>
 
               <CustomTypography
                 gutterBottom
-                className="frs-primary"
+                className="section-four-primary"
                 variant={sizes.sm ? "h5" : "h6"}
               >
                 استثمر في مصر
               </CustomTypography>
               <CustomTypography
                 gutterBottom
-                className="frs-secondary"
+                className="section-four-secondary"
                 variant={sizes.sm ? "h6" : "p"}
               >
                 الأستثمار في مصر يعد يعد فرصة مثيرة بفضل موقعها الاستراتيجي, و
@@ -200,22 +203,23 @@ const ForthSection = ({ sizes }) => {
                 height: "fit-content",
                 margin: sizes.md?"15px 0px":"30px 0px",
                 width: sizes.md?"100%":"80%",
+                'scroll-snap-align':"center",
               }}
             >
-              <CustomImageContainer className="frs-image" sizes={sizes}>
+              <CustomImageContainer className="section-four-image" sizes={sizes}>
                 <CustomImage src="../images/توكيل محامي .png" />
               </CustomImageContainer>
 
               <CustomTypography
                 gutterBottom
-                className="frs-primary"
+                className="section-four-primary"
                 variant={sizes.sm ? "h5" : "h6"}
               >
                 توكيل محامي
               </CustomTypography>
               <CustomTypography
                 gutterBottom
-                className="frs-secondary"
+                className="section-four-secondary"
                 variant={sizes.sm ? "h6" : "p"}
               >توكيل محامي هو اتفاق قانوني يمنح شخص أخر صلاحية تمثيلك أو تنفيذ الاجراءات القانونية نيابة عنك يعتمد علي الثقة المتبادبة و يتضمن توسيق رسمي  اتحديد نطاق الصلاحيات الممنوحة.
               </CustomTypography>
