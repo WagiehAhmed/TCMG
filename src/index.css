@@ -1,15 +1,20 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+/* 
+    background:url("../images/background/1.png");
+    background-repeat: no-repeat;
+    backgroun-position: center center;
+    background-size: cover; */
 }
 
 /* 
@@ -21,3 +26,14 @@ code {
 .slick-slide {
   background:red
 } */
+
+
+@font-face {
+  font-family: Titles;
+  src: url("../public/fonts/titles.ttf");
+}
+@font-face {
+  font-family: Text;
+  src: url("../public/fonts/text.ttf");
+}
+

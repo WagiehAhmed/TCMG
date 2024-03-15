@@ -77,7 +77,7 @@ const SectionSeven = ({ sizes }) => {
                   maxWidth: "250px",
                   margin: "0px auto",
                   // border: "2px solid yellow",
-                  backgroundColor: "rgba(255,255,255,0.1)",
+                  // backgroundColor: "rgba(255,255,255,0.1)",
                 }}
               >
                 <CustomStack
@@ -144,7 +144,7 @@ const SectionSeven = ({ sizes }) => {
                   maxWidth: "250px",
                   margin: "0px auto",
                   // border: "2px solid yellow",
-                  backgroundColor: "rgba(255,255,255,0.1)",
+                  // backgroundColor: "rgba(255,255,255,0.1)",
                 }}
               >
                 <CustomStack

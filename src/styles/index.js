@@ -23,6 +23,10 @@ import {
   styled,
 } from "@mui/material";
 import { theme } from "./theme";
+import {
+  backgroundAnimation,
+  backgroundAnimationController,
+} from "../animations";
 
 //home page
 export const CustomAppBar = styled(AppBar)(() => ({
@@ -55,7 +59,7 @@ export const CustomDrawer = styled(Drawer)(() => ({
 
 export const CustomBox = styled(Box)(() => ({
   boxSizing: "border-box",
-  // border: "2px solid red",
+  // border: "2px solid green",
   padding: "10px",
 
   "&.first-section": {
@@ -63,13 +67,31 @@ export const CustomBox = styled(Box)(() => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItem: "flex-start",
-    backgroundColor: "#002240",
     height: "700px",
-    // height: "70vh",
     padding: "5vw",
+    backgroundColor: "#011429",
   },
 
   "&.second-section": {
+
+    position: "relative",
+    "&:before": {
+      content: "''",
+      width:"100%",
+      height:"100%",
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      boxSizing:"border-box",
+      translate: "-50% -50%",
+      // border: "2px solid red",
+
+      animation: `${backgroundAnimation} 4s linear 5`,
+      animationFillMode: "both",
+      animationTimeline:"scroll(y)",
+
+    },
+
     backgroundColor: "#002240",
     // padding: "0px 5vw",
   },
@@ -348,32 +370,48 @@ export const CustomStack = styled(Stack)(() => ({
     alignItems: "center",
   },
 
+  "&.slider-details": {
+    width: "100%",
+    position: "absolute",
+    top: "50%",
+    translate: "0% -50%",
+    justifyContent: "space-around",
+    alignItems: "center",
+  },
+
   "&.footer": {
     justifyContent: "space-between",
     alignItems: "center",
   },
 }));
 export const CustomTypography = styled(Typography)(() => ({
+  fontFamily: "",
   boxSizing: "border-box",
   color: "white",
-  fontFamily: "Rubik",
+  fontFamily: "Text",
   // border: "2px solid red",
 
   "&.fs-primary": {
     maxWidth: "900px",
+    fontFamily: "Titles",
   },
   "&.fs-secondary": {
     maxWidth: "800px",
     lineHeight: "2em",
   },
   "&.ss-primary": {
+    fontFamily: "Titles",
     maxWidth: "900px",
   },
   "&.ss-secondary": {
     maxWidth: "800px",
     lineHeight: "2em",
   },
-  "&.ts-secondary,ts-primary": {
+  "&.ts-primary": {
+    fontFamily: "Titles",
+    // textAlign: "center",
+  },
+  "&.ts-secondary": {
     textAlign: "center",
   },
   "&.ts-secondary": {
@@ -381,12 +419,15 @@ export const CustomTypography = styled(Typography)(() => ({
   },
   "&.section-four-primary": {
     margin: "10px 0px",
+    fontFamily: "Titles",
   },
   "&.section-four-secondary": {
     lineHeight: "30px",
   },
   "&.section-five-primary": {
     margin: "10px 0px",
+    fontFamily: "Titles",
+
     color: "#845F38",
   },
   "&.section-five-secondary": {
@@ -430,7 +471,7 @@ export const CustomListItem = styled(ListItem)(() => ({
 export const CustomListItemText = styled(ListItemText)(() => ({
   boxSizing: "border-box",
   color: "white",
-  fontFamily: "Rubik",
+  // fontFamily: "Rubik",
   textTransform: "capitalize",
   // border:"2px solid red",
 }));
