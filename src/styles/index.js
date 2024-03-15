@@ -373,6 +373,7 @@ export const CustomStack = styled(Stack)(() => ({
   "&.slider-details": {
     width: "100%",
     position: "absolute",
+    zIndex:10,
     top: "50%",
     translate: "0% -50%",
     justifyContent: "space-around",

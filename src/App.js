@@ -44,7 +44,7 @@ function App() {
       {/* <Box sx={{ border: "2px solid red", zIndex: -1 }}> */}
 
 
-        <FirstSection sizes={matches} />
+        {/* <FirstSection sizes={matches} />
         <SecondSection sizes={matches} />
         <ThirdSection sizes={matches} />
         <ForthSection sizes={matches} />
@@ -54,9 +54,9 @@ function App() {
         <SectionEight sizes={matches} />
         <SectionNine sizes={matches} />
         <SectionEight sizes={matches} />
-        <SectionEleven sizes={matches} />
+        <SectionEleven sizes={matches} /> */}
         <SectionTweleve sizes={matches} />
-        <Footer sizes={matches} />
+        {/* <Footer sizes={matches} /> */}
 
 
       </Box>

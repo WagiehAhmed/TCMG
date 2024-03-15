@@ -34,26 +34,36 @@ const SectionTweleve = ({ sizes }) => {
     initialSlide: 0,
   };
   return (
-    <CustomBox className="section-tweleve" sizes={sizes}>
+    <CustomBox
+      className="section-tweleve"
+      sizes={sizes}
+      sx={{ position: "relative" }}
+    >
+      <CustomStack className="horizontal slider-details">
+        <IconContainer onClick={previous} className="arrow-icon">
+          <KeyboardArrowRightIcon
+            sx={{ fontSize: sizes.md ? "25px" : "70px" }}
+          />
+        </IconContainer>
+
+        <CustomTypography variant={sizes.md ? "h3" : "h1"}>
+          القاهرة
+        </CustomTypography>
+
+        <IconContainer onClick={next} className="arrow-icon">
+          <KeyboardArrowLeftIcon
+            sx={{ fontSize: sizes.md ? "25px" : "70px" }}
+          />
+        </IconContainer>
+      </CustomStack>
       <Slider
         {...settings}
         ref={(slider) => {
           sliderRef = slider;
         }}
       >
-
         {/* slide */}
-        <Box sx={{position:"relative" }}>
-          <CustomStack className="horizontal slider-details">
-            <IconContainer onClick={next} className="arrow-icon" >
-              <KeyboardArrowLeftIcon sx={{fontSize:sizes.md?"25px":"70px"}}/>
-            </IconContainer>
-
-            <CustomTypography variant={sizes.md?"h3":"h1"}>القاهرة</CustomTypography>
-            <IconContainer onClick={previous} className="arrow-icon">
-              <KeyboardArrowRightIcon sx={{fontSize:sizes.md?"25px":"70px"}}/>
-            </IconContainer>
-          </CustomStack>
+        <Box>
           <CustomImageContainer className="section-tweleve-image-container">
             <CustomImage
               src="../images/logo.png"
@@ -62,17 +72,7 @@ const SectionTweleve = ({ sizes }) => {
           </CustomImageContainer>
         </Box>
         {/* slide */}
-        <Box sx={{position:"relative" }}>
-          <CustomStack className="horizontal slider-details">
-            <IconContainer onClick={next} className="arrow-icon" >
-              <KeyboardArrowLeftIcon sx={{fontSize:sizes.md?"25px":"70px"}}/>
-            </IconContainer>
-
-            <CustomTypography variant={sizes.md?"h3":"h1"}>القاهرة</CustomTypography>
-            <IconContainer onClick={previous} className="arrow-icon">
-              <KeyboardArrowRightIcon sx={{fontSize:sizes.md?"25px":"70px"}}/>
-            </IconContainer>
-          </CustomStack>
+        <Box>
           <CustomImageContainer className="section-tweleve-image-container">
             <CustomImage
               src="../images/logo.png"
