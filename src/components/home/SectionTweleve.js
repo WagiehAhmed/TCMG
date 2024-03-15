@@ -63,7 +63,7 @@ const SectionTweleve = ({ sizes }) => {
         }}
       >
         {/* slide */}
-        <Box>
+        <Box >
           <CustomImageContainer className="section-tweleve-image-container">
             <CustomImage
               src="../images/logo.png"
@@ -72,7 +72,7 @@ const SectionTweleve = ({ sizes }) => {
           </CustomImageContainer>
         </Box>
         {/* slide */}
-        <Box>
+        <Box >
           <CustomImageContainer className="section-tweleve-image-container">
             <CustomImage
               src="../images/logo.png"

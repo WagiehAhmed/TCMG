@@ -371,13 +371,15 @@ export const CustomStack = styled(Stack)(() => ({
   },
 
   "&.slider-details": {
-    width: "100%",
+    width: "97%",
     position: "absolute",
     zIndex:10,
     top: "50%",
-    translate: "0% -50%",
+    left: "50%",
+    translate: "-50% -50%",
     justifyContent: "space-around",
     alignItems: "center",
+    // border:"2px solid red",
   },
 
   "&.footer": {
