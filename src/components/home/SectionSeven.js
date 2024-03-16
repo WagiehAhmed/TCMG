@@ -43,13 +43,13 @@ const SectionSeven = ({ sizes }) => {
   };
   return (
     <CustomBox
-      className="sixth-section"
+      className="section-seven"
       sx={{ height: sizes.md ? "auto" : "auto" }}
     >
-      <CustomStack className="sis-container">
+      <CustomStack className="section-seven-container">
         <CustomTypography
           gutterBottom
-          className="sis-primary"
+          className="section-seven-primary"
           variant={sizes.sm ? "h5" : sizes.lg ? "h3" : "h2"}
         >
           أراء عملائنا الكرام

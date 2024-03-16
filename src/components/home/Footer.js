@@ -56,10 +56,10 @@ const Footer = ({ sizes }) => {
           className="footer-horizontal2"
         >
           <Box>
-            <CustomTypography>أخبار ورؤي</CustomTypography>
-            <CustomTypography>تواصلوا معنا</CustomTypography>
-            <CustomTypography>الخدمات القانونية</CustomTypography>
-            <CustomTypography>الاستشارات القانونية</CustomTypography>
+            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>أخبار ورؤي</CustomTypography>
+            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>تواصلوا معنا</CustomTypography>
+            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>الخدمات القانونية</CustomTypography>
+            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>الاستشارات القانونية</CustomTypography>
           </Box>
           <Divider
             flexItem
@@ -83,9 +83,9 @@ const Footer = ({ sizes }) => {
             sx={{ border: "1px solid white" }}
           />
           <Box>
-            <CustomTypography>فريق العمل</CustomTypography>
-            <CustomTypography>لماذا أخترتنا</CustomTypography>
-            <CustomTypography>أراءالعملاء</CustomTypography>
+            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>فريق العمل</CustomTypography>
+            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>لماذا أخترتنا</CustomTypography>
+            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>أراءالعملاء</CustomTypography>
           </Box>
         </CustomStack>
 

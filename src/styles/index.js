@@ -14,6 +14,7 @@ import {
   Grid,
   IconButton,
   Link,
+  List,
   ListItem,
   ListItemText,
   Stack,
@@ -50,52 +51,80 @@ export const CustomDrawer = styled(Drawer)(() => ({
   boxSizing: "border-box",
   // border: "2px solid green",
   zIndex: 1000,
+  width: "240px",
+  // flexShrink: 0,
   "& .MuiDrawer-paper": {
+    width: "240px",
     boxSizing: "border-box",
     // width: "100vw",
     backgroundColor: "#002240",
+  },
+  "& .MuiBackdrop-root , &.MuiModal-backdrop": {
+    boxSizing: "border-box",
+    // width: "100vw",
+    backgroundColor: "transparent",
+  },
+  // width:"700px",
+
+  "&.admin-dashboard": {
+    "& .MuiDrawer-paper": {
+      boxSizing: "border-box",
+      backgroundColor: "white",
+    },
+    "& .MuiBackdrop-root , &.MuiModal-backdrop": {
+      boxSizing: "border-box",
+      backgroundColor: "transparent",
+    },
   },
 }));
 
 export const CustomBox = styled(Box)(() => ({
   boxSizing: "border-box",
-  // border: "2px solid green",
-  padding: "10px",
+  // padding: "10px",
+  // border: "2px solid yellow",
 
-  "&.first-section": {
+  "&.section-one,&.second-section, &.section-three, &.section-four ,&.section-five,&.section-six ,&.section-seven,&.section-eight,&.section-nine,&.section-eleven,&.section-tweleve,&.footer":
+    {
+      minHeight: "80dvh",
+      // height: "100%",
+      // display: "flex",
+      // flexDirection: "column",
+      // justifyContent: "center",
+      // alignItem: "center",
+      // "scroll-snap-align": "start",
+    },
+
+  "&.section-one": {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItem: "flex-start",
-    height: "700px",
-    padding: "5vw",
+    padding: "0px 5vw",
     backgroundColor: "#011429",
   },
 
   "&.second-section": {
-
     position: "relative",
     "&:before": {
       content: "''",
-      width:"100%",
-      height:"100%",
+      width: "100%",
+      height: "100%",
       position: "absolute",
       top: "50%",
       left: "50%",
-      boxSizing:"border-box",
+      boxSizing: "border-box",
       translate: "-50% -50%",
       // border: "2px solid red",
 
-      animation: `${backgroundAnimation} 4s linear 5`,
+      animation: `${backgroundAnimation} 4s linear infinite`,
       animationFillMode: "both",
-      animationTimeline:"scroll(y)",
-
+      // animationTimeline: "scroll(y)",
     },
 
     backgroundColor: "#002240",
     // padding: "0px 5vw",
   },
-  "&.third-section": {
+  "&.section-three": {
     backgroundColor: "#0D1429",
     // height: "75vh",
     // padding: "0px 5vw",
@@ -104,12 +133,19 @@ export const CustomBox = styled(Box)(() => ({
     backgroundColor: "#0A1328",
   },
 
-  "&.fifth-section": {
+  "&.section-five": {
     backgroundColor: "#0D1B36",
   },
 
-  "&.sixth-section": {
+  "&.section-six": {
     backgroundColor: "#0A1328",
+  },
+  "&.section-seven": {
+    backgroundColor: "#0A1328",
+  },
+  "&.section-eight": {
+    minHeight: "50dvh",
+    backgroundColor: "white",
   },
 
   "&.section-four-p1,&.section-five-p1,&.section-eleven-p1": {
@@ -158,7 +194,7 @@ export const CustomImageContainer = styled(Box)(() => ({
     width: "100%",
     height: "400px",
   },
-  "&.sis-image": {
+  "&.section-six-image": {
     width: "100%",
     height: "80%",
   },
@@ -193,16 +229,25 @@ export const CustomImage = styled("img")(({ src }) => ({
 }));
 
 //forms
-export const CustomForm = styled("form")(() => ({
-  // width: sizes.xs ? "90%" : "25%",
-  // minWidth: sizes.xs ? "90%" : "350px",
+export const CustomForm = styled("form")(({ sizes }) => ({
+ 
   maxWidth: "100%",
-  // border: "2px solid green",
-  // boxShadow:"rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
+  // border: "2px solid red",
 
-  // "&.dialog-form":{
-  //  width:"100%",
-  // }
+  "&.center-form": {
+     width: sizes ? "90%" : "25%",
+  minWidth: sizes ? "90%" : "350px",
+    borderRadius: "25px",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    // border: "2px solid red",
+    backgroundColor: "rgba(100,100,250,0.5)",
+    backgroundColor: "#4E6768",
+    boxShadow:
+      "rgba(100, 150, 40, 0.3) 0px 19px 38px, rgba(100, 50, 100, 0.22) 0px 15px 12px",
+  },
 }));
 
 export const CustomFormControl = styled(FormControl)(() => ({
@@ -210,6 +255,7 @@ export const CustomFormControl = styled(FormControl)(() => ({
   width: "100%",
   height: "100%",
   padding: "10px",
+  borderRadius: "25px",
   justifyContent: "flex-start",
   // padding: sizes.md ? "10px" : "20px",
   //   boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
@@ -219,9 +265,59 @@ export const CustomFormControl = styled(FormControl)(() => ({
 export const CustomTextFeild = styled(TextField)(() => ({
   boxSizing: "border-box ",
   width: "100%",
-  // backgroundColor: "white",
+  color: "white",
+  direction: "ltr",
+  flexGrow: 1,
+  
 
+
+  "&.login-form":{
+    marginBottom: "15px",
+    color: "secondary",
+    borderRadius: "50px",
+    backgroundColor: "white",
+    color: "black",
+    "& .MuiInputBase-root": {
+      borderRadius: "50px",
+      color: "black",
+    },
+    "& .MuiInputBase-input": {
+      color: "black",
+      padding: "10px ",
+      borderRadius: "50px",
+    },
+  },
   // border: "2px solid green",
+  "& .MuiInputBase-root": {
+    color: "white",
+  },
+  "& .MuiInputBase-input": {
+    color: "white",
+    padding: "10px ",
+  },
+
+  "& label.Mui-focused": {},
+
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {},
+    "&:hover fieldset": {
+      margin: "-1px",
+    },
+    "&.Mui-focused fieldset": {
+      margin: "-1px",
+    },
+  },
+
+  "&.multiline": {
+    borderRadius: "25px",
+    "& .MuiInputBase-root": {
+      borderRadius: "25px",
+    },
+    "& .MuiInputBase-input": {
+      padding: "10px ",
+      borderRadius: "25px",
+    },
+  },
 
   "&.search": {
     backgroundColor: "white",
@@ -359,7 +455,7 @@ export const CustomStack = styled(Stack)(() => ({
       maxHeight: "100%",
     },
 
-  "&.sis-container": {
+  "&.section-six-container, &.section-seven-container": {
     // justifyContent: "center",
     alignItems: "center",
   },
@@ -373,7 +469,7 @@ export const CustomStack = styled(Stack)(() => ({
   "&.slider-details": {
     width: "97%",
     position: "absolute",
-    zIndex:10,
+    zIndex: 10,
     top: "50%",
     left: "50%",
     translate: "-50% -50%",
@@ -436,7 +532,7 @@ export const CustomTypography = styled(Typography)(() => ({
   "&.section-five-secondary": {
     lineHeight: "30px",
   },
-  "&.sis-primary": {
+  "&.section-six-primary": {
     textAlign: "center",
   },
   "&.footer-last": {
@@ -465,6 +561,12 @@ export const CustomGrid = styled(Grid)(() => ({
   },
 }));
 
+export const CustomList = styled(List)(() => ({
+  boxSizing: "border-box",
+  // border: "2px solid red",
+  color: "white",
+}));
+
 export const CustomListItem = styled(ListItem)(() => ({
   boxSizing: "border-box",
   // border: "2px solid red",
@@ -477,4 +579,111 @@ export const CustomListItemText = styled(ListItemText)(() => ({
   // fontFamily: "Rubik",
   textTransform: "capitalize",
   // border:"2px solid red",
+}));
+
+// // forms section ...........................................................................
+// export const CustomForm = styled("form")(({ sizes }) => ({
+//   width: sizes.xs ? "90%" : "25%",
+//   minWidth: sizes.xs ? "90%" : "350px",
+//   maxWidth: "100%",
+//   margin: "0px auto",
+//   borderRadius: "10px",
+//   boxShadow:
+//     "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
+//   border: "2px solid green",
+
+//   "&.center-form": {
+//     position: "absolute",
+//     top: "50%",
+//     left: "50%",
+//     transform: "translate(-50%, -50%)",
+//     border: "2px solid green",
+//   },
+
+//   "&.dialog-form": {
+//     width: "100%",
+//   },
+// }));
+
+// export const CustomFormControl = styled(FormControl)(({ sizes }) => ({
+//   boxSizing: "border-box",
+//   width: "100%",
+//   height: "100%",
+//   borderRadius: "8px",
+//   padding: sizes.md ? "10px" : "20px",
+//   //   boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
+//   border: "2px solid red",
+// }));
+
+// // export const CustomFormLabel = styled(FormLabel)(() => ({
+// //   textAlign: "center",
+// //   padding: "10px",
+// //   margin: "10px 0px",
+// //   // border: "2px solid red",
+// //   "&::first-letter": {
+// //     textTransform: "capitalize",
+// //   },
+// //   "&.new-account": {
+// //     fontWeight: "bold",
+// //   },
+// // }));
+
+// // export const CustomFormControlLabel = styled(FormControlLabel)(() => ({
+// //   textTransform: "capitalize",
+// //   padding: "0px",
+// //   margin: "5px 0px",
+// //   // border: "2px solid red",
+// // }));
+
+// export const CustomTextFeild = styled(TextField)(() => ({
+//   flexGrow: 1,
+//   marginBottom: "15px",
+//   color: "secondary",
+//   borderRadius: "50px",
+//   //   border:"2px solid green",
+//   "& .MuiInputBase-root": {
+//     borderRadius: "50px",
+//   },
+//   "& .MuiInputBase-input": {
+//     padding: "10px ",
+//     borderRadius: "50px",
+//   },
+
+//   "& label.Mui-focused": {},
+
+//   "& .MuiOutlinedInput-root": {
+//     "& fieldset": {},
+//     "&:hover fieldset": {
+//       margin: "-1px",
+//     },
+//     "&.Mui-focused fieldset": {
+//       margin: "-1px",
+//     },
+//   },
+
+//   "&.multiline": {
+//     borderRadius: "25px",
+//     "& .MuiInputBase-root": {
+//       borderRadius: "25px",
+//     },
+//     "& .MuiInputBase-input": {
+//       padding: "10px ",
+//       borderRadius: "25px",
+//     },
+//   },
+// }));
+
+export const CustomButton = styled(Button)(() => ({
+  textTransform: "capitalize",
+  width: "fit-content",
+  margin: "0px auto",
+
+  // color: ,
+  backgroundColor: "white",
+  borderRadius: "25px",
+  padding: "5px 25px",
+  "&:hover": {
+    // backgroundColor: ``,
+    scale: "1.05",
+  },
 }));

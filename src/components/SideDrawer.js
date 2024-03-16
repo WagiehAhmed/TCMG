@@ -1,5 +1,5 @@
 import React from "react";
-import { CustomDrawer, CustomListItem, CustomListItemText, IconContainer } from "./../styles";
+import { CustomDrawer, CustomList, CustomListItem, CustomListItemText, IconContainer } from "./../styles";
 import {
   List,
   ListItemButton,
@@ -10,7 +10,7 @@ import {
 
 import ClearIcon from '@mui/icons-material/Clear';
 
-const SideDrawer = ({ open, onClose }) => {
+const SideDrawer = ({ open, onClose ,sizes}) => {
   return (
     <CustomDrawer
       variant="temporary"
@@ -29,16 +29,34 @@ const SideDrawer = ({ open, onClose }) => {
           (text, index) => (
             <CustomListItem key={text} disablePadding>
               <ListItemButton>
-                <ListItemIcon>{index}</ListItemIcon>
+                {/* <ListItemIcon>{index}</ListItemIcon> */}
                 <CustomListItemText
                   primary={text}
-                  primaryTypographyProps={{ fontSize: "3em" }}
+                  primaryTypographyProps={{ fontSize: "1em" }}
                 />
               </ListItemButton>
             </CustomListItem>
           )
         )}
       </List>
+      
+    {/* --------------------------------------------------------------------------- */}
+
+    <CustomList sx={{display:"flex",flexDirection:sizes.md?"column":"column"}} >
+        {["people", "capabilities", "about us", "insights", "careers"].map(
+          (text, index) => (
+            <CustomListItem key={text} disablePadding>
+              <ListItemButton>
+                {/* <ListItemIcon>{index}</ListItemIcon> */}
+                <CustomListItemText
+                  primary={text}
+                  primaryTypographyProps={{ fontSize: "1em" }}
+                />
+              </ListItemButton>
+            </CustomListItem>
+          )
+        )}
+      </CustomList>
     </CustomDrawer>
   );
 };

@@ -13,6 +13,10 @@ import { ThemeProvider } from "@mui/material";
 import { theme } from "./styles/theme";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
+import Login from "./components/Login";
+import Main from './components/Main';
+import Admins from './components/Admins';
+import Blogs from "./components/Blogs";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,7 +24,12 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/admin" element={<Dashboard />} />
+        <Route path="/admin" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="" element={<Main />} />
+          <Route path="admins" element={<Admins />} />
+          <Route path="blogs" element={<Blogs />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   </ThemeProvider>

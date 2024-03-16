@@ -1,20 +1,20 @@
-import { Box, Toolbar, useMediaQuery } from "@mui/material";
+import { Box, Stack, Toolbar, useMediaQuery } from "@mui/material";
 
 import AppBar from "./components/AppBar";
 import SideDrawer from "./components/SideDrawer";
 
 import { useState } from "react";
-import FirstSection from "./components/home/FirstSection";
+import FirstSection from "./components/home/SectionOne";
 import { theme } from "./styles/theme";
 import SecondSection from "./components/home/SecondSection";
-import ThirdSection from "./components/home/ThirdSection";
-import ForthSection from "./components/home/ForthSection";
-import FifthSection from "./components/home/FifthSection";
-import SixthSection from './components/home/SixthSection';
+import ThirdSection from "./components/home/SectionThree";
+import ForthSection from "./components/home/SectionFour";
+import FifthSection from "./components/home/SectionFive";
+import SixthSection from "./components/home/SectionSix";
 import SectionSeven from "./components/home/SectionSeven";
 import SectionEight from "./components/home/SectionEight";
 import SectionNine from "./components/home/SectionNine";
-import SectionEleven from "./components/home/ٍSectionEleven";
+import SectionEleven from "./components/home/SectionEleven";
 import Footer from "./components/home/Footer";
 import SectionTweleve from "./components/home/SectionTweleve";
 
@@ -35,15 +35,36 @@ function App() {
   };
 
   return (
-    <Box>
-    {/* <Box sx={{ border: "2px solid yellow" }}> */}
+    <Box
+      sx={{
+        zIndex: -1,
+        // padding: "0px",
+        // height: "100dvh",
+        // border: "2px solid red",
+      }}
+    >
       <AppBar openSideDrawer={sideDrawerTrigger} sizes={matches} />
       <Toolbar />
-      <SideDrawer open={openSideDrawer} onClose={sideDrawerTrigger} />
-      <Box sx={{ zIndex: -1 }}>
-      {/* <Box sx={{ border: "2px solid red", zIndex: -1 }}> */}
+      <SideDrawer
+        open={openSideDrawer}
+        onClose={sideDrawerTrigger}
+        sizes={matches}
+      />
 
+      <Box
+        sx={{
+          zIndex: -1,
+          // padding: "0px",
+          // border: "2px solid green",
 
+          // "&::-webkit-scrollbar": {
+          //   width: "0px",
+          // },
+          // height: "80%",
+          // overflow: "scroll",
+          // "scroll-snap-type": "y mandatory",
+        }}
+      >
         <FirstSection sizes={matches} />
         <SecondSection sizes={matches} />
         <ThirdSection sizes={matches} />
@@ -57,8 +78,6 @@ function App() {
         <SectionEleven sizes={matches} />
         <SectionTweleve sizes={matches} />
         <Footer sizes={matches} />
-
-
       </Box>
     </Box>
   );
