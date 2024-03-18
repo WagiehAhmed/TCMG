@@ -19,10 +19,10 @@ const SectionNine = ({ sizes }) => {
   return (
     <CustomBox className="section-nine">
       <CustomStack
-        className="ffs-container"
+        className="section-nine-container"
         sx={{ flexDirection: sizes.md ? "column" : "row" }}
       >
-        <CustomBox className="ffs-p1" sx={{ width: sizes.md ? "100%" : "55%" }}>
+        <CustomBox className="section-nine-p1" sx={{ width: sizes.md ? "100%" : "55%" }}>
           <CustomForm>
             <CustomFormControl>
 
@@ -72,7 +72,7 @@ const SectionNine = ({ sizes }) => {
          
         </CustomBox>
         <CustomBox
-          className="ffs-p2"
+          className="section-nine-p2"
           sx={{
             width: sizes.md ? "100%" : "45%",
             maxHeight: sizes.md ? "100%" : "550px",

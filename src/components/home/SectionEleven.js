@@ -65,7 +65,7 @@ const SectionEleven = ({ sizes }) => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "flex-start",
-                //border: "2px solid yellow",
+                // border: "2px solid yellow",
                 height: "fit-content",
                 margin: sizes.md ? "15px 0px" : "30px 0px",
                 width: sizes.md ? "100%" : "80%",

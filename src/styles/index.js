@@ -82,14 +82,14 @@ export const CustomBox = styled(Box)(() => ({
   boxSizing: "border-box",
   // padding: "10px",
   // border: "2px solid yellow",
-
+  
   "&.section-one,&.second-section, &.section-three, &.section-four ,&.section-five,&.section-six ,&.section-seven,&.section-eight,&.section-nine,&.section-eleven,&.section-tweleve,&.footer":
-    {
+  {
+      padding: "0px 5vw",
       minHeight: "80dvh",
-      // height: "100%",
-      // display: "flex",
-      // flexDirection: "column",
-      // justifyContent: "center",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
       // alignItem: "center",
       // "scroll-snap-align": "start",
     },
@@ -99,7 +99,6 @@ export const CustomBox = styled(Box)(() => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItem: "flex-start",
-    padding: "0px 5vw",
     backgroundColor: "#011429",
   },
 
@@ -148,14 +147,14 @@ export const CustomBox = styled(Box)(() => ({
     backgroundColor: "white",
   },
 
-  "&.section-four-p1,&.section-five-p1,&.section-eleven-p1": {
+  "&.section-four-p1,&.section-five-p1,&.section-eleven-p1,&.section-nine-p1": {
     height: "100%",
     padding: "0px",
     padding: "20px 5px",
     // overflowY: "hidden",
   },
 
-  "&.section-four-p2,&.section-five-p2,&.section-eleven-p2": {
+  "&.section-four-p2,&.section-five-p2,&.section-eleven-p2,&.section-nine-p2": {
     padding: "0px",
     "&::-webkit-scrollbar": {
       width: "0px",
@@ -242,7 +241,7 @@ export const CustomForm = styled("form")(({ sizes }) => ({
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    // border: "2px solid red",
+    // border: "2px solid red",+
     backgroundColor: "rgba(100,100,250,0.5)",
     backgroundColor: "#4E6768",
     boxShadow:
@@ -442,6 +441,7 @@ export const CustomStack = styled(Stack)(() => ({
     justifyContent: "space-evenly",
   },
 
+
   "&.section-four-container,&.section-five-container,&.section-eleven-container":
     {
       justifyContent: "center",
@@ -455,11 +455,17 @@ export const CustomStack = styled(Stack)(() => ({
       maxHeight: "100%",
     },
 
-  "&.section-six-container, &.section-seven-container": {
+  "&.section-six-container, &.section-seven-container, &.section-eleven-container": {
     // justifyContent: "center",
     alignItems: "center",
   },
 
+  
+  "&.section-nine-container":
+    {
+      justifyContent: "center",
+      alignItems: "center",
+    },
   "&.details": {
     height: "200px",
     justifyContent: "space-evenly",

@@ -18,6 +18,7 @@ import SectionEleven from "./components/home/SectionEleven";
 import Footer from "./components/home/Footer";
 import SectionTweleve from "./components/home/SectionTweleve";
 
+import {formatDistanceToNow} from "date-fns";
 function App() {
   // use media hook to get access to different screens
   const matches = {
@@ -34,6 +35,15 @@ function App() {
     setOpenSideDrawer(!openSideDrawer);
   };
 
+
+
+  const result = formatDistanceToNow(
+    new Date("Mon Mar 18 2024 13:5:08"),
+    {addSuffix: true}
+  )
+  console.log(result)
+
+  
   return (
     <Box
       sx={{

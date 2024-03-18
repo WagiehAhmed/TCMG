@@ -51,13 +51,13 @@ const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginRight: `-${drawerWidth}px`,
+    marginLeft: `-${drawerWidth}px`,
     ...(open && {
       transition: theme.transitions.create("margin", {
         easing: theme.transitions.easing.easeOut,
         duration: theme.transitions.duration.enteringScreen,
       }),
-      marginRight: 0,
+      marginLeft: 0,
     }),
   })
 );
@@ -71,7 +71,7 @@ const AppBar = styled(MuiAppBar, {
   }),
   ...(open && {
     width: `calc(100% - ${drawerWidth}px)`,
-    marginRight: `${drawerWidth}px`,
+    marginLeft: `${drawerWidth}px`,
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
@@ -235,7 +235,7 @@ const Dashboard = () => {
   //       height: "100%",
   //       width: "calc(100% - 300)",
   //       boxSizing: "border-box",
-  //       marginRight: "200px",
+  //       marginLeft: "200px",
   //       padding: "50px",
   //       backgroundColor:"#EEE",
   //       border: "2px solid green",
