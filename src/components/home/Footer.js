@@ -91,8 +91,8 @@ const Footer = ({ sizes }) => {
 
         {/* 3 */}
         <CustomStack
-          className="horizontal footer-horizontal3"
-          sx={{ width: sizes.md ? "100%" : "60%" }}
+          className="footer-horizontal3"
+          sx={{ width: sizes.md ? "100%" : "60%" ,flexDirection:sizes.xs?"column":"row"}}
         >
           <CustomTypography>الاشعارات القانونية</CustomTypography>
           <CustomTypography>سياسة الخصوصية</CustomTypography>

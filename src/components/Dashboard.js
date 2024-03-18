@@ -51,13 +51,13 @@ const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginLeft: `-${drawerWidth}px`,
+    marginRight: `-${drawerWidth}px`,
     ...(open && {
       transition: theme.transitions.create("margin", {
         easing: theme.transitions.easing.easeOut,
         duration: theme.transitions.duration.enteringScreen,
       }),
-      marginLeft: 0,
+      marginRight: 0,
     }),
   })
 );
@@ -71,7 +71,7 @@ const AppBar = styled(MuiAppBar, {
   }),
   ...(open && {
     width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: `${drawerWidth}px`,
+    marginRight: `${drawerWidth}px`,
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
@@ -117,7 +117,7 @@ const Dashboard = () => {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar position="fixed" open={open} sx={{backgroundColor:"#002240"}}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -129,7 +129,7 @@ const Dashboard = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Persistent drawer
+            {/* Persistent drawer */}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -212,39 +212,6 @@ const Dashboard = () => {
       </Main>
     </Box>
   );
-
-  // <Box
-  //   sx={{
-  //     border: "2px solid red",
-  //     boxSizing: "border-box",
-  //     height: "100dvh",
-  //     // background: "url(../images/backgroundAdmin.png)",
-  //     // backgroundPosition: "center",
-  //     // backgroundRepeat: "no-repeat",
-  //     // backgroundSize: "cover",
-  //   }}
-  // >
-  //   <AdminSideBar
-  //     sizes={matches}
-  //     open={openSideDrawer}
-  //     onClose={sideDrawerTrigger}
-  //   />
-
-  //   <Box
-  //     sx={{
-  //       height: "100%",
-  //       width: "calc(100% - 300)",
-  //       boxSizing: "border-box",
-  //       marginLeft: "200px",
-  //       padding: "50px",
-  //       backgroundColor:"#EEE",
-  //       border: "2px solid green",
-  //     }}
-  //   >
-
-  //     <Outlet />
-  //   </Box>
-  // </Box>
 };
 
 export default Dashboard;

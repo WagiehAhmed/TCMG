@@ -82,9 +82,9 @@ export const CustomBox = styled(Box)(() => ({
   boxSizing: "border-box",
   // padding: "10px",
   // border: "2px solid yellow",
-  
+
   "&.section-one,&.second-section, &.section-three, &.section-four ,&.section-five,&.section-six ,&.section-seven,&.section-eight,&.section-nine,&.section-eleven,&.section-tweleve,&.footer":
-  {
+    {
       padding: "0px 5vw",
       minHeight: "80dvh",
       display: "flex",
@@ -229,18 +229,27 @@ export const CustomImage = styled("img")(({ src }) => ({
 
 //forms
 export const CustomForm = styled("form")(({ sizes }) => ({
- 
   maxWidth: "100%",
   // border: "2px solid red",
 
   "&.center-form": {
-     width: sizes ? "90%" : "25%",
-  minWidth: sizes ? "90%" : "350px",
-    borderRadius: "25px",
+    width: sizes ? "90%" : "25%",
+    minWidth: sizes ? "90%" : "350px",
+    borderRadius: "10px",
     position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
+    // border: "2px solid red",+
+    backgroundColor: "#002240",
+    // backgroundColor: "rgba(100,100,250,0.5)",
+    boxShadow:
+      "rgba(100, 150, 40, 0.3) 0px 19px 38px, rgba(100, 50, 100, 0.22) 0px 15px 12px",
+  },
+  "&.add-blog-form": {
+    width: sizes ? "90%" : "25%",
+    minWidth: sizes ? "90%" : "350px",
+    // borderRadius: "10px",
     // border: "2px solid red",+
     backgroundColor: "rgba(100,100,250,0.5)",
     backgroundColor: "#4E6768",
@@ -254,7 +263,7 @@ export const CustomFormControl = styled(FormControl)(() => ({
   width: "100%",
   height: "100%",
   padding: "10px",
-  borderRadius: "25px",
+  borderRadius: "10px",
   justifyContent: "flex-start",
   // padding: sizes.md ? "10px" : "20px",
   //   boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
@@ -267,10 +276,8 @@ export const CustomTextFeild = styled(TextField)(() => ({
   color: "white",
   direction: "ltr",
   flexGrow: 1,
-  
 
-
-  "&.login-form":{
+  "&.login-form": {
     marginBottom: "15px",
     color: "secondary",
     borderRadius: "50px",
@@ -428,6 +435,7 @@ export const CustomStack = styled(Stack)(() => ({
     justifyContent: "space-around",
   },
   "&.footer-horizontal2": {
+    marginBlock: "15px ",
     alignItems: "center",
     justifyContent: "space-evenly",
   },
@@ -436,11 +444,11 @@ export const CustomStack = styled(Stack)(() => ({
     justifyContent: "space-evenly",
   },
   "&.footer-horizontal3": {
-    padding: "10px 0px",
+    marginBlock: "15px ",
+    paddingBlock: "15px ",
     alignItems: "center",
     justifyContent: "space-evenly",
   },
-
 
   "&.section-four-container,&.section-five-container,&.section-eleven-container":
     {
@@ -455,17 +463,16 @@ export const CustomStack = styled(Stack)(() => ({
       maxHeight: "100%",
     },
 
-  "&.section-six-container, &.section-seven-container, &.section-eleven-container": {
-    // justifyContent: "center",
-    alignItems: "center",
-  },
-
-  
-  "&.section-nine-container":
+  "&.section-six-container, &.section-seven-container, &.section-eleven-container":
     {
-      justifyContent: "center",
+      // justifyContent: "center",
       alignItems: "center",
     },
+
+  "&.section-nine-container": {
+    justifyContent: "center",
+    alignItems: "center",
+  },
   "&.details": {
     height: "200px",
     justifyContent: "space-evenly",
@@ -542,9 +549,11 @@ export const CustomTypography = styled(Typography)(() => ({
     textAlign: "center",
   },
   "&.footer-last": {
+    marginBlock:"10px",
     textAlign: "center",
     maxWidth: "600px",
     minWidth: "300px",
+    // border:"2px solid green"
   },
 }));
 
@@ -683,13 +692,51 @@ export const CustomButton = styled(Button)(() => ({
   textTransform: "capitalize",
   width: "fit-content",
   margin: "0px auto",
-
-  // color: ,
   backgroundColor: "white",
   borderRadius: "25px",
-  padding: "5px 25px",
+  // padding: "5px 15px",
   "&:hover": {
-    // backgroundColor: ``,
+    backgroundColor: "white",
+    letterSpacing:"2px",
     scale: "1.05",
   },
+  "&.add": {
+    textTransform: "capitalize",
+    width: "fit-content",
+    color:"#0A1328",
+    backgroundColor: "white",
+    borderRadius: "5px",
+    margin: "5px 0px",
+    "&:hover": {
+     backgroundColor: "white",
+    letterSpacing:"2px",
+    scale: "1.05",
+    },
+  },
+}));
+
+export const CustomCircularProgress = styled(CircularProgress)(() => ({
+  width: "fit-content",
+  alignSelf: "center",
+  margin: "5px",
+  color: "white",
+}));
+
+export const CustomDialog = styled(Dialog)(() => ({
+  // width:"100%",
+  // height:"100%",
+  border: "2px solid red",
+  backgroundColor: "rgba(0,0,0,0.5)",
+
+  "& .MuiPaper-root": {
+    borderRadius: "10px",
+  },
+}));
+export const CustomDialogContent = styled(DialogContent)(() => ({
+  borderRadius: "10px",
+  overflow: "hidden",
+  padding: "0px",
+  maxWidth: "500px",
+  minWidth: "300px",
+  border: "2px solid red",
 }));
