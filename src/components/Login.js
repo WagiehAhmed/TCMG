@@ -1,4 +1,4 @@
-import { Box, useMediaQuery } from "@mui/material";
+import { Box, InputAdornment, useMediaQuery } from "@mui/material";
 import React, { useRef, useState } from "react";
 // import { CustomButton, CustomForm, CustomFormControl, CustomTextFeild } from "../../Styles";
 // import { theme } from "../../Styles/themes";
@@ -11,10 +11,13 @@ import {
   CustomFormControl,
   CustomTextFeild,
 } from "../styles";
+
+
+
 import { adminSchema } from "../util/validation";
 import FormHelperText from "@mui/material/FormHelperText";
 import { useLogin } from "../hooks/useLogin";
-
+import { toast } from 'react-toastify';
 
 
 import LockIcon from "@mui/icons-material/Lock";
@@ -61,6 +64,14 @@ const Login = () => {
             placeholder="Email"
             inputRef={mail}
             error={error === "email"}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <LockIcon color="inherit" />
+                  {/* <LockIcon color={password ? "primary2" : "inherit"} /> */}
+                </InputAdornment>
+              ),
+            }}
           />
           <CustomTextFeild
             type="password"
@@ -70,6 +81,14 @@ const Login = () => {
             placeholder="Password"
             inputRef={pass}
             error={error === "password"}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <MailIcon color="inherit"/>
+                  {/* <MailIcon color={password ? "primary2" : "inherit"} /> */}
+                </InputAdornment>
+              ),
+            }}
           />
 
           {/* <FormHelperText>{err.message}</FormHelperText> */}
@@ -85,8 +104,7 @@ const Login = () => {
           </CustomButton>
        )} 
 
-          {error && <div>{error}</div>}
-          {/* {loading && "LOADING........"} */}
+          {error && error}
         </CustomFormControl>
       </CustomForm>
     </Box>

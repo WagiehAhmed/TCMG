@@ -1,0 +1,1 @@
+export const serverUrl = "https://admin.markzk.com/";

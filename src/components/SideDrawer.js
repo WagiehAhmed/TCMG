@@ -9,14 +9,18 @@ import {
 } from "@mui/material";
 
 import ClearIcon from '@mui/icons-material/Clear';
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const SideDrawer = ({ open, onClose ,sizes}) => {
+  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   return (
     <CustomDrawer
       variant="temporary"
       open={open}
       onClose={onClose}
-      anchor="right"
+      anchor={i18n.language==="ar"?"right":"left"}
     >
       <Toolbar>
         {/* menu icon */}
@@ -43,10 +47,10 @@ const SideDrawer = ({ open, onClose ,sizes}) => {
     {/* --------------------------------------------------------------------------- */}
 
     <CustomList sx={{display:"flex",flexDirection:sizes.md?"column":"column"}} >
-        {["people", "capabilities", "about us", "insights", "careers"].map(
+        {["locations", "news", "events"].map(
           (text, index) => (
             <CustomListItem key={text} disablePadding>
-              <ListItemButton>
+              <ListItemButton onClick={()=>navigate(`/${text}`,{replace:false})}>
                 {/* <ListItemIcon>{index}</ListItemIcon> */}
                 <CustomListItemText
                   primary={text}

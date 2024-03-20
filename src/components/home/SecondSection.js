@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef ,useEffect} from "react";
 import Slider from "react-slick";
 import {
   CustomBox,
@@ -12,8 +12,16 @@ import SliderSlide from "./SliderSlide";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import { useTranslation } from "react-i18next";
 
-const SecondSection = ({sizes}) => {
+const SecondSection = ({ sizes }) => {
+  const { t, i18n } = useTranslation();
+  var dir;
+
+useEffect(()=>{
+  dir = i18n.dir(i18n.language);
+},[i18n,i18n.language]);
+
   let sliderRef = useRef(null);
   const next = () => {
     sliderRef.slickNext();
@@ -22,7 +30,7 @@ const SecondSection = ({sizes}) => {
     sliderRef.slickPrev();
   };
   var settings = {
-    rtl: true,
+    rtl: false,
     dots: false,
     arrows: false,
     infinite: true,
@@ -42,15 +50,17 @@ const SecondSection = ({sizes}) => {
       >
         <Box>
           <SlideItem>
-            <CustomTypography className="ss-primary" variant={sizes.sm?"h3":"h1"}>
-              استشارات قانونية بمعايير عالمية
+            <CustomTypography
+              className="ss-primary"
+              variant={sizes.sm ? "h3" : "h1"}
+            >
+              {t("sectionTwoS1T")}
             </CustomTypography>
-            <CustomTypography className="ss-secondary" variant={sizes.sm?"h6":"h5"}>
-              بخبرة قانونية واسعة,نقدماستشارات قانونية لجميع العملاءمن ايدي نخبة
-              من اكفا المحامين المتمرسين و افضل الشركاءبمستوي جديدي من الحلول
-              القانونية المتكاملةز اطلب الان استشارة قانونية فورية وتواصل مع
-              افضل مستشار قانوني واحصل علي الدعم القانوني لحل قضاياك و تحقيق
-              اهدافك.
+            <CustomTypography
+              className="ss-secondary"
+              variant={sizes.sm ? "h6" : "h5"}
+            >
+              {t("sectionTwoS1B")}
             </CustomTypography>
             <Box
               sx={{
@@ -68,16 +78,17 @@ const SecondSection = ({sizes}) => {
         </Box>
         <Box>
           <SlideItem>
-            <CustomTypography className="ss-primary" variant={sizes.sm?"h3":"h1"}>
-              مكتب محاماة دولي بمعايير أداء عالمية
+            <CustomTypography
+              className="ss-primary"
+              variant={sizes.sm ? "h3" : "h1"}
+            >
+              {t("sectionTwoS2T")}
             </CustomTypography>
-            <CustomTypography className="ss-secondary" variant={sizes.sm?"h6":"h5"}>
-              تعد المجموعة التجارية و البحرية أكبر مكتب محاماة دولي في مصر, وهذا
-              يرجع لحجم القضايا الكبيري التي تسلمها المكتب,و العملاءالدوليين
-              والمحليين الذين تعاملوا معنا, باللأضافة الي حجم و قوةالعلاقات
-              العامة بروتوكلات التعاون المرتبطة بالمكتب . و قد اتخذ المكتب مقرة
-              الرئيسي في قلب مدينة القاهرة ليكون منارة لتحقيق الاهداف القانونية
-              اكافة عملائناالكرامزتواصل الان مع أفضل شركة محاماة رائدة في مصر.
+            <CustomTypography
+              className="ss-secondary"
+              variant={sizes.sm ? "h6" : "h5"}
+            >
+              {t("sectionTwoS2B")}
             </CustomTypography>
             <Box
               sx={{

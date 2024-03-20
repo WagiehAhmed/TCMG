@@ -30,9 +30,12 @@ export const useLogin = () => {
           setLoading(false);
           throw Error(json.message);
         }
+        if (response.ok) {
+          localStorage.setItem("token",JSON.stringify(json.token))
+          // redirect to tasks page
+          navigate("/dashboard", { replace: true });
+        }
 
-        // redirect to tasks page
-        navigate("/dashboard", { replace: true });
 
         // reset loading with false
         setLoading(false);

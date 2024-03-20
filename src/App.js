@@ -3,23 +3,20 @@ import { Box, Stack, Toolbar, useMediaQuery } from "@mui/material";
 import AppBar from "./components/AppBar";
 import SideDrawer from "./components/SideDrawer";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FirstSection from "./components/home/SectionOne";
 import { theme } from "./styles/theme";
-import SecondSection from "./components/home/SecondSection";
-import ThirdSection from "./components/home/SectionThree";
-import ForthSection from "./components/home/SectionFour";
-import FifthSection from "./components/home/SectionFive";
-import SixthSection from "./components/home/SectionSix";
-import SectionSeven from "./components/home/SectionSeven";
-import SectionEight from "./components/home/SectionEight";
-import SectionNine from "./components/home/SectionNine";
-import SectionEleven from "./components/home/SectionEleven";
-import Footer from "./components/home/Footer";
-import SectionTweleve from "./components/home/SectionTweleve";
 
-import {formatDistanceToNow} from "date-fns";
+import { useTranslation } from "react-i18next";
+
+import { formatDistanceToNow } from "date-fns";
+import { Outlet } from "react-router-dom";
 function App() {
+  const { t, i18n } = useTranslation();
+  useEffect(() => {
+    const dir = i18n.dir(i18n.language)
+    document.documentElement.dir = dir
+  }, [i18n, i18n.language]);
   // use media hook to get access to different screens
   const matches = {
     xs: useMediaQuery(theme.breakpoints.down("sm")),
@@ -35,15 +32,11 @@ function App() {
     setOpenSideDrawer(!openSideDrawer);
   };
 
+  const result = formatDistanceToNow(new Date("Mon Mar 18 2024 13:5:08"), {
+    addSuffix: true,
+  });
+  console.log(result);
 
-
-  const result = formatDistanceToNow(
-    new Date("Mon Mar 18 2024 13:5:08"),
-    {addSuffix: true}
-  )
-  console.log(result)
-
-  
   return (
     <Box
       sx={{
@@ -75,19 +68,8 @@ function App() {
           // "scroll-snap-type": "y mandatory",
         }}
       >
-        <FirstSection sizes={matches} />
-        <SecondSection sizes={matches} />
-        <ThirdSection sizes={matches} />
-        <ForthSection sizes={matches} />
-        <FifthSection sizes={matches} />
-        <SixthSection sizes={matches} />
-        <SectionSeven sizes={matches} />
-        <SectionEight sizes={matches} />
-        <SectionNine sizes={matches} />
-        <SectionEight sizes={matches} />
-        <SectionEleven sizes={matches} />
-        <SectionTweleve sizes={matches} />
-        <Footer sizes={matches} />
+        <Outlet/>
+       
       </Box>
     </Box>
   );

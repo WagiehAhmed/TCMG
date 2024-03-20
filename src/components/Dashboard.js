@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -23,11 +23,11 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-  Button
+  Button,
 } from "@mui/material";
 
 import DashboardIcon from "@mui/icons-material/Dashboard";
-
+import LogoutIcon from "@mui/icons-material/Logout";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import {
@@ -38,6 +38,7 @@ import {
   IconContainer,
 } from "../styles";
 import { Outlet, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const drawerWidth = 240;
 
@@ -45,7 +46,7 @@ const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
   ({ theme, open }) => ({
     flexGrow: 1,
     // border:"2px solid red",
-    background:"#EEE",
+    background: "#EEE",
     padding: theme.spacing(3),
     transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.sharp,
@@ -90,18 +91,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  // const matches = {
-  //   xs: useMediaQuery(theme.breakpoints.down("sm")),
-  //   sm: useMediaQuery(theme.breakpoints.down("md")),
-  //   md: useMediaQuery(theme.breakpoints.down("lg")),
-  //   lg: useMediaQuery(theme.breakpoints.down("xl")),
-  //   xl: useMediaQuery(theme.breakpoints.only("xl")),
-  // };
-  //drawer trigger
-  // const [openSideDrawer, setOpenSideDrawer] = useState(true);
-  // const sideDrawerTrigger = () => {
-  //   setOpenSideDrawer(!openSideDrawer);
-  // };
+  const { t, i18n } = useTranslation();
 
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
@@ -114,23 +104,47 @@ const Dashboard = () => {
     setOpen(false);
   };
 
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      navigate("/home", { replace: true });
+    }
+  });
+  
+  // logoutHandler
+  const logoutHandler = () => {
+    localStorage.removeItem("token");
+    navigate("/home", { replace: true });
+  };
+
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", height: "100dvh" }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open} sx={{backgroundColor:"#002240"}}>
-        <Toolbar>
+      <AppBar position="fixed" open={open} sx={{ backgroundColor: "#002240" }}>
+        <Toolbar
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+          }}
+        >
           <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
-            sx={{ mr: 2, ...(open && { display: "none" }) }}
+            // sx={{ mr: 2, ...(open && { display: "none" }) }}
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            {/* Persistent drawer */}
-          </Typography>
+          <IconButton
+            color="inherit"
+            // aria-label="open drawer"
+            onClick={logoutHandler}
+            // edge="start"
+            // sx={{ mr: 2, ...(open && { display: "none" }) }}
+          >
+            <LogoutIcon />
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -144,6 +158,7 @@ const Dashboard = () => {
         }}
         variant="persistent"
         anchor="right"
+        // anchor={i18n.language==="ar"?"right":"left"}
         open={open}
       >
         <DrawerHeader>
@@ -157,26 +172,24 @@ const Dashboard = () => {
         </DrawerHeader>
         <Divider />
         <CustomListItem key={"dashboard"} disablePadding>
-        <ListItemButton>
-          <CustomListItemText
-            // primary="Main"
-            primaryTypographyProps={{ fontSize: "1em" }}
-            onClick={() => navigate("", { replace: true })}
-          >
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<DashboardIcon />}
-                aria-controls="panel1-content"
-                id="panel1-header"
-              >
-                Dashboard
-              </AccordionSummary>
-             
-            </Accordion>
-          </CustomListItemText>
-         
-        </ListItemButton>
-      </CustomListItem>
+          <ListItemButton>
+            <CustomListItemText
+              // primary="Main"
+              primaryTypographyProps={{ fontSize: "1em" }}
+              onClick={() => navigate("", { replace: true })}
+            >
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<DashboardIcon />}
+                  aria-controls="panel1-content"
+                  id="panel1-header"
+                >
+                  Dashboard
+                </AccordionSummary>
+              </Accordion>
+            </CustomListItemText>
+          </ListItemButton>
+        </CustomListItem>
         <List>
           {["admins", "blogs"].map((text, index) => (
             <CustomListItem key={text} disablePadding>
@@ -207,8 +220,8 @@ const Dashboard = () => {
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
-       
-        <Outlet/>
+
+        <Outlet />
       </Main>
     </Box>
   );

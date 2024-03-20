@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   CustomBox,
   CustomImage,
@@ -10,8 +10,19 @@ import {
 
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { Box } from "@mui/material";
+import { useBlogs } from "../../hooks/useBlogs";
+import { useStore } from "../../hooks/useStore";
+import { serverUrl } from './../../util/serverURL';
+import { useNavigate } from "react-router-dom";
 
 const SectionEleven = ({ sizes }) => {
+
+  const navigate = useNavigate();
+  const { blogs } = useStore();
+  const { loading, error, getBlogs } = useBlogs();
+  useEffect(() => {
+    getBlogs();
+  }, []);
   return (
     <CustomBox className="section-eleven">
       <CustomStack
@@ -60,54 +71,58 @@ const SectionEleven = ({ sizes }) => {
           }}
         >
           <CustomStack className="section-eleven-subContainer">
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-start",
-                // border: "2px solid yellow",
-                height: "fit-content",
-                margin: sizes.md ? "15px 0px" : "30px 0px",
-                width: sizes.md ? "100%" : "80%",
-                "scroll-snap-align": "center",
-              }}
-            >
-              <CustomImageContainer
-                className="section-eleven-image-container"
-                sizes={sizes}
-              >
-                <CustomImage src="../images/TCMG social media posts batch 2-07.jpg" />
-              </CustomImageContainer>
+           {blogs !== undefined && blogs.map((blog)=>(
+             <Box
+             sx={{
+               display: "flex",
+               flexDirection: "column",
+               alignItems: "flex-start",
+               // border: "2px solid yellow",
+               height: "fit-content",
+               margin: sizes.md ? "15px 0px" : "30px 0px",
+               width: sizes.md ? "100%" : "80%",
+               "scroll-snap-align": "center",
+             }}
+             onClick={()=>navigate(`/news/${blog.id}`)}
+           >
+             <CustomImageContainer
+               className="section-eleven-image-container"
+               sizes={sizes}
+             >
+               <CustomImage src={`${serverUrl}${blog.image}`}/>
+             </CustomImageContainer>
 
-              <CustomTypography
-                gutterBottom
-                className="section-eleven-primary"
-                variant={sizes.sm ? "h5" : "h6"}
-              >
-                محامي في مصر
-              </CustomTypography>
-
-              <CustomTypography
-                gutterBottom
-                className="section-eleven-primary"
-                variant={sizes.sm ? "h5" : "h6"}
-              >
-                28يناير, 9دقايق
-              </CustomTypography>
-
-              <CustomTypography
-                gutterBottom
-                className="section-eleven-secondary"
-                variant={sizes.sm ? "h6" : "p"}
-              >
-                علي مر السنين و قد تم الاعتراف بامحامي المصري كونة أحد أجدر رجال
-                القانونفي تولي المسائل القانونية, فقد عرف بعقليتة الاستراتيجة
-                العالية و امتلاكة المقدرة الفائقة في أدارة الازمات و فض
-                المنازعات المحلية و الدولية في كثير من بلاد الوطن العربي في شتي
-                فوع القانون.
-              </CustomTypography>
-            </Box>
-            <Box
+             <CustomTypography
+               gutterBottom
+               className="section-eleven-primary"
+               variant={sizes.sm ? "h5" : "h6"}
+             >
+               {/* محامي في مصر */}
+               {blog.title}
+             </CustomTypography>
+             <CustomTypography
+               gutterBottom
+               className="section-eleven-secondary"
+               variant={sizes.sm ? "h6" : "p"}
+             >
+               {/* علي مر السنين و قد تم الاعتراف بامحامي المصري كونة أحد أجدر رجال
+               القانونفي تولي المسائل القانونية, فقد عرف بعقليتة الاستراتيجة
+               العالية و امتلاكة المقدرة الفائقة في أدارة الازمات و فض
+               المنازعات المحلية و الدولية في كثير من بلاد الوطن العربي في شتي
+               فوع القانون. */}
+               {blog.content}
+             </CustomTypography>
+             <CustomTypography
+               gutterBottom
+               className="section-eleven-primary"
+               variant={sizes.sm ? "h5" : "h6"}
+               >
+               {/* 28يناير, 9دقايق */}
+               {blog.date}
+             </CustomTypography>
+           </Box>
+           ))}
+            {/* <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
@@ -240,7 +255,7 @@ const SectionEleven = ({ sizes }) => {
                 التجارية, لذا و قت باتت الحاحة تتطلب توكيل المحامي المتخصص
                 بحماية الملكية الفكرية.
               </CustomTypography>
-            </Box>
+            </Box> */}
           </CustomStack>
         </CustomBox>
       </CustomStack>
