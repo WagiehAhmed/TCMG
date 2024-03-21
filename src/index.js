@@ -32,8 +32,6 @@ root.render(
       <BrowserRouter>
         <Routes>
         <Route path="/" exact element={<Navigate to="/home" />} />
-
-
           <Route path="/" element={<App />}>
             <Route path="home" element={<Home />} />
             <Route path="news" element={<News />} />
@@ -47,7 +45,9 @@ root.render(
             <Route path="admins" element={<Admins />} />
             <Route path="blogs" element={<Blogs />} />
           </Route>
+
           <Route path="*" element={<NotFound />}/>
+          
         </Routes>
         <ToastContainer/>
       </BrowserRouter>

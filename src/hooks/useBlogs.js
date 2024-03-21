@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useStore } from "./useStore";
+import { serverUrl } from "../util/serverURL";
 
 export const useBlogs = () => {
   const [loading, setLoading] = useState(false);
@@ -18,7 +19,7 @@ export const useBlogs = () => {
       // set loading with true
       setLoading(true);
       //fetch request to server with the user data
-      const response = await fetch("http://localhost:2000/api/blogs", {
+      const response = await fetch(`${serverUrl}api/blogs`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -47,7 +48,7 @@ export const useBlogs = () => {
       // set loading with true
       setLoading(true);
       //fetch request to server with the user data
-      const response = await fetch(`http://localhost:2000/api/blogs/${id}`, {
+      const response = await fetch(`${serverUrl}api/blogs/${id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -76,7 +77,7 @@ export const useBlogs = () => {
       // set loading with true
       setLoading(true);
       //fetch request to server with the user data
-      const response = await fetch(`http://localhost:2000/api/blogs/search/${keyword}`, {
+      const response = await fetch(`${serverUrl}api/blogs/search/${keyword}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -106,7 +107,7 @@ export const useBlogs = () => {
       // set loading with true
       setLoading(true);
      
-      const response = await fetch("http://localhost:2000/api/blogs", {
+      const response = await fetch(`${serverUrl}/api/blogs`, {
         method: "POST",
         // headers: {
         //   "Content-Type": "application/json",
@@ -133,7 +134,7 @@ export const useBlogs = () => {
       // set loading with true
       setLoading(true);
      
-      const response = await fetch(`http://localhost:2000/api/blogs/${id}`, {
+      const response = await fetch(`${serverUrl}api/blogs/${id}`, {
         method: "DELETE",
         // headers: {
         //   "Content-Type": "application/json",
@@ -158,7 +159,7 @@ export const useBlogs = () => {
     try {
       // set loading with true
       setLoading(true);
-      const response = await fetch(`http://localhost:2000/api/blogs/${id}`, {
+      const response = await fetch(`${serverUrl}api/blogs/${id}`, {
         method: "PUT",
         // headers: {
         //   "Content-Type": "application/json",

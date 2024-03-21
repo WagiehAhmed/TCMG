@@ -17,7 +17,7 @@ export const useLogin = () => {
         // set loading with true
         setLoading(true);
         //fetch request to server with the user data
-        const response = await fetch("http://localhost:2000/api/admins/login", {
+        const response = await fetch(`${serverUrl}api/admins/login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
