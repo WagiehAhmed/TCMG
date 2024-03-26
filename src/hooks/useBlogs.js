@@ -114,7 +114,7 @@ export const useBlogs = () => {
         //   "Content-Type": "application/json",
         // },
 
-        body: blogData,
+        body: JSON.stringify(blogData),
       });
       const json = await response.json();
       if (!response.ok) {
