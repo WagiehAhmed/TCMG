@@ -130,6 +130,7 @@ export const useBlogs = () => {
     try {
       // set loading with true
       setLoading(true);
+      
       const response = await fetch(`${serverUrl}/api/blogs`, {
         method: "POST",
         headers: {
@@ -137,7 +138,7 @@ export const useBlogs = () => {
           // Accept: 'application/json',
           // 'Content-Type': 'multipart/form-data',
         },
-        body: JSON.stringify(JSON.parse(blogData)),
+        body: JSON.stringify(blogData),
       });
       const json = await response.json();
       if (!response.ok) {
