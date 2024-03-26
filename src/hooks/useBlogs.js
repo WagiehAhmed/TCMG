@@ -12,7 +12,7 @@ export const useBlogs = () => {
   //navigation
   const navigate = useNavigate();
 
-  const {storeDispatch} = useStore();
+  const { storeDispatch } = useStore();
   //get all blogs
   const getBlogs = async () => {
     try {
@@ -33,7 +33,7 @@ export const useBlogs = () => {
       }
 
       if (response.ok) {
-        storeDispatch({type:"SET_BLOGS",payload:json.blogs})
+        storeDispatch({ type: "SET_BLOGS", payload: json.blogs });
       }
 
       // reset loading with false
@@ -103,18 +103,17 @@ export const useBlogs = () => {
 
   //add blog
   const addBlog = async (blogData) => {
-   
     try {
       // set loading with true
       setLoading(true);
+      blogData = JSON.stringify(blogData);
       const response = await fetch(`${serverUrl}/api/blogs`, {
         method: "POST",
-
         // headers: {
         //   "Content-Type": "application/json",
         // },
 
-        body: blogData[0],
+        body: blogData,
       });
       const json = await response.json();
       if (!response.ok) {
@@ -122,21 +121,21 @@ export const useBlogs = () => {
         throw Error(json.message);
       }
       if (response.ok) {
-        storeDispatch({type:"ADD_BLOG",payload:json.blog})
+        storeDispatch({ type: "ADD_BLOG", payload: json.blog });
       }
       setLoading(false);
     } catch (error) {
-      console.log(error)
+      console.log(error);
       setError(error.message);
     }
   };
 
-   //delete blog
-   const deleteBlog = async (id) => {
+  //delete blog
+  const deleteBlog = async (id) => {
     try {
       // set loading with true
       setLoading(true);
-     
+
       const response = await fetch(`${serverUrl}/api/blogs/${id}`, {
         method: "DELETE",
         // headers: {
@@ -149,7 +148,7 @@ export const useBlogs = () => {
         throw Error(json.message);
       }
       if (response.ok) {
-        storeDispatch({type:"DELETE_BLOG",payload:json.blogId})
+        storeDispatch({ type: "DELETE_BLOG", payload: json.blogId });
       }
       setLoading(false);
     } catch (error) {
@@ -157,10 +156,9 @@ export const useBlogs = () => {
     }
   };
 
-   //update blog
-   const updateBlog = async (id,blogData) => {
+  //update blog
+  const updateBlog = async (id, blogData) => {
     try {
-      
       // set loading with true
       setLoading(true);
       const response = await fetch(`${serverUrl}/api/blogs/${id}`, {
@@ -177,8 +175,8 @@ export const useBlogs = () => {
         throw Error(json.message);
       }
       if (response.ok) {
-        storeDispatch({type:"DELETE_BLOG",payload:id})
-        storeDispatch({type:"ADD_BLOG",payload:json.updatedBlog})
+        storeDispatch({ type: "DELETE_BLOG", payload: id });
+        storeDispatch({ type: "ADD_BLOG", payload: json.updatedBlog });
       }
       setLoading(false);
     } catch (error) {
@@ -186,5 +184,16 @@ export const useBlogs = () => {
     }
   };
 
-  return { getBlogs, addBlog, deleteBlog, updateBlog,getBlog,search, foundedBlogs,blog, loading, error };
+  return {
+    getBlogs,
+    addBlog,
+    deleteBlog,
+    updateBlog,
+    getBlog,
+    search,
+    foundedBlogs,
+    blog,
+    loading,
+    error,
+  };
 };
