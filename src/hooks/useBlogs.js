@@ -111,6 +111,7 @@ export const useBlogs = () => {
       const response = await axios({
         method: "POST",
         url: `${serverUrl}/api/blogs`,
+        timeout: 1000,
         data: blogData,
       });
 
