@@ -18,7 +18,7 @@ const {storeDispatch} = useStore();
       // set loading with true
       setLoading(true);
       //fetch request to server with the user data
-      const response = await fetch(`${serverUrl}api/admins`, {
+      const response = await fetch(`${serverUrl}/api/admins`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -49,7 +49,7 @@ storeDispatch({type:"SET_ADMINS",payload:json.admins})
       // set loading with true
       setLoading(true);
      
-      const response = await fetch(`${serverUrl}api/admins`, {
+      const response = await fetch(`${serverUrl}/api/admins`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +77,7 @@ storeDispatch({type:"SET_ADMINS",payload:json.admins})
       // set loading with true
       setLoading(true);
      
-      const response = await fetch(`${serverUrl}api/admins/${id}`, {
+      const response = await fetch(`${serverUrl}/api/admins/${id}`, {
         method: "DELETE",
         // headers: {
         //   "Content-Type": "application/json",
@@ -104,7 +104,7 @@ storeDispatch({type:"SET_ADMINS",payload:json.admins})
       // set loading with true
       setLoading(true);
      
-      const response = await fetch(`${serverUrl}api/admins/${id}`, {
+      const response = await fetch(`${serverUrl}/api/admins/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
