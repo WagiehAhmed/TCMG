@@ -121,7 +121,6 @@ const Blogs = () => {
     // fd.append("image", image.current.files[0]);
     // addBlog(fd);
     
-    
     addBlog({
       title:title.current.value,
       description:description.current.value,

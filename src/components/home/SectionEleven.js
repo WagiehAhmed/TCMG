@@ -90,7 +90,9 @@ const SectionEleven = ({ sizes }) => {
                className="section-eleven-image-container"
                sizes={sizes}
              >
-               <CustomImage src={`${serverUrl}/blogs/${blog.image}`}/>
+               {/* <CustomImage src={`${serverUrl}/blogs/${blog.image}`}/> */}
+               <CustomImage src={blog.image}/>
+
              </CustomImageContainer>
 
              <CustomTypography
