@@ -130,6 +130,7 @@ export const useBlogs = () => {
     try {
       // set loading with true
       setLoading(true);
+      console.log(blogData)
       const response = await fetch(`${serverUrl}/api/blogs`, {
         method: "POST",
         // headers: {
