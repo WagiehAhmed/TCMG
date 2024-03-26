@@ -104,55 +104,51 @@ export const useBlogs = () => {
 
   //add blog
   const addBlog = async (blogData) => {
-    try {
-      // set loading with true
-      setLoading(true);
-
-      const response = await axios({
-        method: "POST",
-        url: `${serverUrl}/api/blogs`,
-        data: blogData,
-      });
-
-      if (!response.ok) {
-        setLoading(false);
-        // throw Error(json.message);
-      }
-      console.log(response);
-      storeDispatch({ type: "ADD_BLOG", payload: response.data.blog });
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-      setError(error.message);
-    }
-
-
     // try {
     //   // set loading with true
     //   setLoading(true);
 
-    //   const response = await fetch(`${serverUrl}/api/blogs`, {
+    //   const response = await axios({
     //     method: "POST",
-    //     // headers: {
-    //       // "Content-Type": "application/json",
-    //       // Accept: 'application/json',
-    //       // 'Content-Type': 'multipart/form-data',
-    //     // },
-    //     body: blogData,
+    //     url: `${serverUrl}/api/blogs`,
+    //     data: blogData,
     //   });
-    //   const json = await response.json();
+
     //   if (!response.ok) {
     //     setLoading(false);
-    //     throw Error(json.message);
     //   }
-    //   if (response.ok) {
-    //     storeDispatch({ type: "ADD_BLOG", payload: json.blog });
-    //   }
+    //   storeDispatch({ type: "ADD_BLOG", payload: response.data.blog });
     //   setLoading(false);
     // } catch (error) {
     //   console.log(error);
     //   setError(error.message);
     // }
+
+
+    try {
+      // set loading with true
+      setLoading(true);
+
+      const response = await fetch(`${serverUrl}/api/blogs`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(blogData),
+      });
+      const json = await response.json();
+      if (!response.ok) {
+        setLoading(false);
+        throw Error(json.message);
+      }
+      if (response.ok) {
+        storeDispatch({ type: "ADD_BLOG", payload: json.blog });
+      }
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setError(error.message);
+    }
   };
 
   //delete blog
