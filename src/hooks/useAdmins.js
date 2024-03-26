@@ -63,7 +63,7 @@ storeDispatch({type:"SET_ADMINS",payload:json.admins})
       }
       if (response.ok) {
         storeDispatch({type:"ADD_ADMIN",payload:json.admin})
-        console.log(json.admin);
+        // console.log(json.admin);
       }
       setLoading(false);
     } catch (error) {
