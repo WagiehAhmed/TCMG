@@ -112,7 +112,7 @@ export const useBlogs = () => {
         // headers: {
         //   "Content-Type": "application/json",
         // },
-        body: blogData,
+        body: JSON.parse(JSON.stringify(blogData)),
       });
       const json = await response.json();
       if (!response.ok) {
@@ -166,7 +166,7 @@ export const useBlogs = () => {
         // headers: {
         //   "Content-Type": "application/json",
         // },
-        body: JSON.parse(JSON.stringify(blogData)),
+        body: blogData,
       });
 
       const json = await response.json();
