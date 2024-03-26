@@ -111,7 +111,7 @@ export const useBlogs = () => {
       const response = await axios({
         method: "POST",
         url: `${serverUrl}/api/blogs`,
-        data: JSON.stringify(blogData),
+        data: blogData,
       });
 
       if (!response.ok) {
