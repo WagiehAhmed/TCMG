@@ -132,10 +132,9 @@ export const useBlogs = () => {
       setLoading(true);
       const response = await fetch(`${serverUrl}/api/blogs`, {
         method: "POST",
-        // headers: {
-        //   "Content-Type": "application/json",
-        // },
-
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: blogData,
       });
       const json = await response.json();
