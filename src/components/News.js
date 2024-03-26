@@ -32,6 +32,8 @@ const News = () => {
     getBlogs();
   }, []);
 
+  console.log("news : ",blogs)
+
   const sizes = {
     xs: useMediaQuery(theme.breakpoints.down("sm")),
     sm: useMediaQuery(theme.breakpoints.down("md")),
