@@ -158,15 +158,15 @@ export const useBlogs = () => {
    //update blog
    const updateBlog = async (id,blogData) => {
     try {
-
+      
       // set loading with true
       setLoading(true);
       const response = await fetch(`${serverUrl}/api/blogs/${id}`, {
         method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: blogData,
+        // headers: {
+        //   "Content-Type": "application/json",
+        // },
+        body: JSON.parse(JSON.stringify(blogData)),
       });
 
       const json = await response.json();
