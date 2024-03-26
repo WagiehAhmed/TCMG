@@ -1,4 +1,4 @@
-import React, { useRef ,useEffect} from "react";
+import React, { useRef, useEffect } from "react";
 import Slider from "react-slick";
 import {
   CustomBox,
@@ -18,9 +18,9 @@ const SecondSection = ({ sizes }) => {
   const { t, i18n } = useTranslation();
   var dir;
 
-useEffect(()=>{
-  dir = i18n.dir(i18n.language);
-},[i18n,i18n.language]);
+  useEffect(() => {
+    dir = i18n.dir(i18n.language);
+  }, [i18n, i18n.language]);
 
   let sliderRef = useRef(null);
   const next = () => {
@@ -41,7 +41,8 @@ useEffect(()=>{
     initialSlide: 0,
   };
   return (
-    <CustomBox className="second-section" sizes={sizes}>
+    <CustomBox className="second-section" sizes={sizes}
+    sx={{minHeight:{xs:"60dvh",md:"70dvh",lg:"90dvh"}}}>
       <Slider
         {...settings}
         ref={(slider) => {
@@ -105,12 +106,21 @@ useEffect(()=>{
           </SlideItem>
         </Box>
       </Slider>
-      <Box sx={{ width: "fit-content", margin: "0px auto" }}>
-        <IconContainer onClick={previous} className="arrow-icon">
-          <KeyboardArrowRightIcon />
-        </IconContainer>
+      <Box
+        sx={{
+          width: "fit-content",
+          position: "absolute",
+          bottom: "0px",
+          left: "50%",
+          transform: "translate(-50%,0px)",
+        }}
+        dir="ltr"
+      >
         <IconContainer onClick={next} className="arrow-icon">
           <KeyboardArrowLeftIcon />
+        </IconContainer>
+        <IconContainer onClick={previous} className="arrow-icon">
+          <KeyboardArrowRightIcon />
         </IconContainer>
       </Box>
     </CustomBox>

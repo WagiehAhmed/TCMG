@@ -37,9 +37,12 @@ const SectionTweleve = ({ sizes }) => {
     <CustomBox
       className="section-tweleve"
       sizes={sizes}
-      sx={{ position: "relative" }}
+      sx={{
+        position: "relative",
+        minHeight: { xs: "50dvh", md: "60dvh", lg: "80dvh" },
+      }}
     >
-      <CustomStack className="horizontal slider-details">
+      <CustomStack className="horizontal slider-details" dir="rtl">
         <IconContainer onClick={previous} className="arrow-icon">
           <KeyboardArrowRightIcon
             sx={{ fontSize: sizes.md ? "25px" : "70px" }}
@@ -63,7 +66,7 @@ const SectionTweleve = ({ sizes }) => {
         }}
       >
         {/* slide */}
-        <Box >
+        <Box>
           <CustomImageContainer className="section-tweleve-image-container">
             <CustomImage
               src="../images/logo.png"
@@ -72,7 +75,7 @@ const SectionTweleve = ({ sizes }) => {
           </CustomImageContainer>
         </Box>
         {/* slide */}
-        <Box >
+        <Box>
           <CustomImageContainer className="section-tweleve-image-container">
             <CustomImage
               src="../images/logo.png"

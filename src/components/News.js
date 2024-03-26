@@ -62,7 +62,7 @@ const News = () => {
                 <Card sx={{ maxWidth: 345 ,margin:"0px auto"}}>
                   <CardMedia
                     sx={{ height: 200 }}
-                    image={`${serverUrl}${blog.image}`}
+                    image={`${serverUrl}/blogs/${blog.image}`}
                     title="green iguana"
                   />
                   <CardContent>

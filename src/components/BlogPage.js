@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { CustomImage, CustomImageContainer } from "../styles";
 import { useStore } from "../hooks/useStore";
 import { useBlogs } from "../hooks/useBlogs";
+import { serverUrl } from './../util/serverURL';
 
 const BlogPage = () => {
   const { id } = useParams();
@@ -21,7 +22,7 @@ const BlogPage = () => {
       {blog !== undefined && (
         <Box>
           <CustomImageContainer className="blog-image">
-            <CustomImage src={`http://localhost:2000/blogs/${blog.image}`} />
+            <CustomImage src={`${serverUrl}/blogs/${blog.image}`} />
           </CustomImageContainer>
           <Typography variant="h3">
             {blog.title}

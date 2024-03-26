@@ -24,7 +24,8 @@ const SectionEleven = ({ sizes }) => {
     getBlogs();
   }, []);
   return (
-    <CustomBox className="section-eleven">
+    <CustomBox className="section-eleven"
+    sx={{ minHeight: { xs: "60dvh", md: "70dvh", lg: "80dvh" } }}>
       <CustomStack
         className="section-eleven-container"
         sx={{ flexDirection: sizes.md ? "column" : "row" }}
@@ -89,7 +90,7 @@ const SectionEleven = ({ sizes }) => {
                className="section-eleven-image-container"
                sizes={sizes}
              >
-               <CustomImage src={`${serverUrl}${blog.image}`}/>
+               <CustomImage src={`${serverUrl}/blogs/${blog.image}`}/>
              </CustomImageContainer>
 
              <CustomTypography

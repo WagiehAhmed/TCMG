@@ -13,9 +13,18 @@ import { Box } from "@mui/material";
 
 const SectionFour = ({ sizes }) => {
   return (
-    <CustomBox className="section-four" >
-      <CustomStack className="section-four-container"sx={{flexDirection: sizes.md ? "column" : "row",}}>
-        <CustomBox className="section-four-p1" sx={{width: sizes.md ? "100%" : "55%"}}>
+    <CustomBox
+      className="section-four"
+      sx={{ minHeight: { xs: "60dvh", md: "70dvh", lg: "90dvh" } }}
+    >
+      <CustomStack
+        className="section-four-container"
+        sx={{ flexDirection: sizes.md ? "column" : "row" }}
+      >
+        <CustomBox
+          className="section-four-p1"
+          sx={{ width: sizes.md ? "100%" : "55%" }}
+        >
           <CustomTypography
             gutterBottom
             className="fs-primary"
@@ -49,21 +58,30 @@ const SectionFour = ({ sizes }) => {
             </IconContainer>
           </Box>
         </CustomBox>
-        <CustomBox className="section-four-p2" sx={{width: sizes.md ? "100%" : "45%",maxHeight:sizes.md ? "100%" : "680px"}}>
+        <CustomBox
+          className="section-four-p2"
+          sx={{
+            width: sizes.md ? "100%" : "45%",
+            maxHeight: sizes.md ? "100%" : "680px",
+          }}
+        >
           <CustomStack className="section-four-subContainer">
             <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "flex-start",
-               //border: "2px solid yellow",
+                //border: "2px solid yellow",
                 height: "fit-content",
-                margin: sizes.md?"15px 0px":"30px 0px",
-                width: sizes.md?"100%":"80%",
-                'scroll-snap-align':"center",
+                margin: sizes.md ? "15px 0px" : "30px 0px",
+                width: sizes.md ? "100%" : "80%",
+                "scroll-snap-align": "center",
               }}
             >
-              <CustomImageContainer className="section-four-image" sizes={sizes}>
+              <CustomImageContainer
+                className="section-four-image"
+                sizes={sizes}
+              >
                 <CustomImage src="../images/تأسيس شركات.png" />
               </CustomImageContainer>
 
@@ -89,7 +107,8 @@ const SectionFour = ({ sizes }) => {
                 sx={{
                   display: "flex",
                   flexDirection: "row",
-                  alignItems: "center",margin: sizes.md?"15px 5px":"30px 10px",
+                  alignItems: "center",
+                  margin: sizes.md ? "15px 5px" : "30px 10px",
                 }}
               >
                 <CustomTypography> الذهاب الي الصفحة</CustomTypography>
@@ -104,14 +123,17 @@ const SectionFour = ({ sizes }) => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "flex-start",
-               //border: "2px solid yellow",
+                //border: "2px solid yellow",
                 height: "fit-content",
-                margin: sizes.md?"15px 0px":"30px 0px",
-                width: sizes.md?"100%":"80%",
-                'scroll-snap-align':"center",
+                margin: sizes.md ? "15px 0px" : "30px 0px",
+                width: sizes.md ? "100%" : "80%",
+                "scroll-snap-align": "center",
               }}
             >
-              <CustomImageContainer className="section-four-image" sizes={sizes}>
+              <CustomImageContainer
+                className="section-four-image"
+                sizes={sizes}
+              >
                 <CustomImage src="../images/الاستشارا القانونية.png" />
               </CustomImageContainer>
 
@@ -137,7 +159,8 @@ const SectionFour = ({ sizes }) => {
                 sx={{
                   display: "flex",
                   flexDirection: "row",
-                  alignItems: "center",margin: sizes.md?"15px 5px":"30px 10px",
+                  alignItems: "center",
+                  margin: sizes.md ? "15px 5px" : "30px 10px",
                 }}
               >
                 <CustomTypography> الذهاب الي الصفحة</CustomTypography>
@@ -152,14 +175,17 @@ const SectionFour = ({ sizes }) => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "flex-start",
-               //border: "2px solid yellow",
+                //border: "2px solid yellow",
                 height: "fit-content",
-                margin: sizes.md?"15px 0px":"30px 0px",
-                width: sizes.md?"100%":"80%",
-                'scroll-snap-align':"center",
+                margin: sizes.md ? "15px 0px" : "30px 0px",
+                width: sizes.md ? "100%" : "80%",
+                "scroll-snap-align": "center",
               }}
             >
-              <CustomImageContainer className="section-four-image" sizes={sizes}>
+              <CustomImageContainer
+                className="section-four-image"
+                sizes={sizes}
+              >
                 <CustomImage src="../images/استثمر في مصر.png" />
               </CustomImageContainer>
 
@@ -184,7 +210,8 @@ const SectionFour = ({ sizes }) => {
                 sx={{
                   display: "flex",
                   flexDirection: "row",
-                  alignItems: "center",margin: sizes.md?"15px 5px":"30px 10px",
+                  alignItems: "center",
+                  margin: sizes.md ? "15px 5px" : "30px 10px",
                 }}
               >
                 <CustomTypography> الذهاب الي الصفحة </CustomTypography>
@@ -193,20 +220,23 @@ const SectionFour = ({ sizes }) => {
                 </IconContainer>
               </Box>
             </Box>
-            
+
             <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "flex-start",
-               //border: "2px solid yellow",
+                //border: "2px solid yellow",
                 height: "fit-content",
-                margin: sizes.md?"15px 0px":"30px 0px",
-                width: sizes.md?"100%":"80%",
-                'scroll-snap-align':"center",
+                margin: sizes.md ? "15px 0px" : "30px 0px",
+                width: sizes.md ? "100%" : "80%",
+                "scroll-snap-align": "center",
               }}
             >
-              <CustomImageContainer className="section-four-image" sizes={sizes}>
+              <CustomImageContainer
+                className="section-four-image"
+                sizes={sizes}
+              >
                 <CustomImage src="../images/توكيل محامي .png" />
               </CustomImageContainer>
 
@@ -221,14 +251,17 @@ const SectionFour = ({ sizes }) => {
                 gutterBottom
                 className="section-four-secondary"
                 variant={sizes.sm ? "h6" : "p"}
-              >توكيل محامي هو اتفاق قانوني يمنح شخص أخر صلاحية تمثيلك أو تنفيذ الاجراءات القانونية نيابة عنك يعتمد علي الثقة المتبادبة و يتضمن توسيق رسمي  اتحديد نطاق الصلاحيات الممنوحة.
+              >
+                توكيل محامي هو اتفاق قانوني يمنح شخص أخر صلاحية تمثيلك أو تنفيذ
+                الاجراءات القانونية نيابة عنك يعتمد علي الثقة المتبادبة و يتضمن
+                توسيق رسمي اتحديد نطاق الصلاحيات الممنوحة.
               </CustomTypography>
               <Box
                 sx={{
                   display: "flex",
                   flexDirection: "row",
                   alignItems: "center",
-                  margin: sizes.md?"15px 5px":"30px 10px",
+                  margin: sizes.md ? "15px 5px" : "30px 10px",
                 }}
               >
                 <CustomTypography> الذهاب الي الصفحة</CustomTypography>

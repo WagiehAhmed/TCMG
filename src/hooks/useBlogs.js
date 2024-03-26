@@ -103,11 +103,11 @@ export const useBlogs = () => {
 
   //add blog
   const addBlog = async (blogData) => {
+   
     try {
       // set loading with true
       setLoading(true);
-     
-      const response = await fetch(`${serverUrl}/api/blogs`, {
+      const response = await fetch(`${serverUrl}api/blogs`, {
         method: "POST",
         // headers: {
         //   "Content-Type": "application/json",
@@ -124,6 +124,7 @@ export const useBlogs = () => {
       }
       setLoading(false);
     } catch (error) {
+      console.log(error)
       setError(error.message);
     }
   };

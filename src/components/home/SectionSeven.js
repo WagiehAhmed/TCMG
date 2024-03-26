@@ -44,7 +44,10 @@ const SectionSeven = ({ sizes }) => {
   return (
     <CustomBox
       className="section-seven"
-      sx={{ height: sizes.md ? "auto" : "auto" }}
+      sx={{
+        height: sizes.md ? "auto" : "auto",
+        minHeight: { xs: "60dvh", md: "70dvh", lg: "80dvh" },
+      }}
     >
       <CustomStack className="section-seven-container">
         <CustomTypography

@@ -9,7 +9,7 @@ import {
 } from "../../styles";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import Slider from "react-slick";
-import { Box, Card, CardMedia, Typography } from "@mui/material";
+import { Box, Card, CardMedia, Stack, Typography } from "@mui/material";
 
 const SectionSix = ({ sizes }) => {
   var settings = {
@@ -43,31 +43,33 @@ const SectionSix = ({ sizes }) => {
   return (
     <CustomBox
       className="section-six"
+      sx={{ minHeight: { xs: "60dvh", md: "70dvh", lg: "80dvh" } }}
     >
       <CustomStack className="section-six-container">
-        <CustomTypography
-          gutterBottom
-          className="section-six-primary"
-          variant={sizes.sm ? "h5" : sizes.lg ? "h3" : "h2"}
-        >
-          فريق العمل
-        </CustomTypography>
-        <IconContainer>
-          <KeyboardBackspaceIcon />
-        </IconContainer>
-        <CustomTypography
-          gutterBottom
-          className="section-six-primary"
-          variant={sizes.sm ? "h6" : "h5"}
-          sx={{ width: sizes.md ? "90%" : "70%" }}
-        >
-          تتكون الهيكلة الادارية للجموعة التجارية و البحرية من أشهر محامين مصر
-          أصحاب الخبرات في تخصصات القضايا المحلية و الدولية المختلفة حيث يضم
-          المحامي محمد أضيف-الرئيس التنفيذي - مجموعة من الكوادرالبشريةالمتخصصة
-          في مجالات القانون المختلفة. ولأن الجودة و السرعة هي شعارنا, نعمل بروح
-          الفريق لدمج الخبرات و المعرفةالمراكطة في دعم عملائنا الكرام علي تحقيق
-          أهدافهم القانونية.
-        </CustomTypography>
+        <Stack sx={{alignItems:"center",marginBottom:sizes.md?"10px":"30px"}}>
+          <CustomTypography
+            gutterBottom
+            variant={sizes.sm ? "h5" : sizes.lg ? "h3" : "h2"}
+          >
+            فريق العمل
+          </CustomTypography>
+          <IconContainer>
+            <KeyboardBackspaceIcon />
+          </IconContainer>
+          <CustomTypography
+            gutterBottom
+            variant={sizes.sm ? "h6" : "h5"}
+            sx={{ width: sizes.md ? "90%" : "70%" }}
+            align="center"
+          >
+            تتكون الهيكلة الادارية للجموعة التجارية و البحرية من أشهر محامين مصر
+            أصحاب الخبرات في تخصصات القضايا المحلية و الدولية المختلفة حيث يضم
+            المحامي محمد أضيف-الرئيس التنفيذي - مجموعة من الكوادرالبشريةالمتخصصة
+            في مجالات القانون المختلفة. ولأن الجودة و السرعة هي شعارنا, نعمل
+            بروح الفريق لدمج الخبرات و المعرفةالمراكطة في دعم عملائنا الكرام علي
+            تحقيق أهدافهم القانونية.
+          </CustomTypography>
+        </Stack>
 
         <Box
           sx={{
@@ -80,7 +82,7 @@ const SectionSix = ({ sizes }) => {
         >
           <Slider {...settings}>
             <Box>
-            {/* <Box sx={{ border: "2px solid green" }}> */}
+              {/* <Box sx={{ border: "2px solid green" }}> */}
               <Box
                 sx={{
                   height: "330px",
@@ -109,17 +111,16 @@ const SectionSix = ({ sizes }) => {
                   sx={{
                     textAlign: "center",
                     padding: "5px",
-                    color:"#845F38",
+                    color: "#845F38",
                   }}
                 >
                   الرئيس التنفيذي
                 </Typography>
               </Box>
             </Box>
-          
+
             <Box>
-
-            {/* <Box sx={{ border: "2px solid green" }}> */}
+              {/* <Box sx={{ border: "2px solid green" }}> */}
               <Box
                 sx={{
                   height: "330px",
@@ -148,18 +149,13 @@ const SectionSix = ({ sizes }) => {
                   sx={{
                     textAlign: "center",
                     padding: "5px",
-                    color:"#845F38",
+                    color: "#845F38",
                   }}
                 >
                   الرئيس التنفيذي
                 </Typography>
               </Box>
             </Box>
-          
-
-
-          
-
           </Slider>
         </Box>
       </CustomStack>

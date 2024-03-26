@@ -41,18 +41,20 @@ const SectionThree = ({sizes}) => {
   };
 
   return (
-    <CustomBox className="section-three" sizes={sizes}>
-      <Stack alignItems="center">
-        <CustomTypography gutterBottom className="ts-primary"variant={sizes.sm?"h3":"h1"}>
+    <CustomBox className="section-three" sizes={sizes}
+    sx={{minHeight:{xs:"60dvh",md:"70dvh",lg:"90dvh"}}}>
+      <Stack alignItems="center" 
+      sx={{marginBottom:sizes.md?"10px":"30px"}}>
+        <CustomTypography gutterBottom className="ts-primary"variant={sizes.sm?"h3":"h1"} align="center">
           لماذا تخترنا و بكل ثقة؟
         </CustomTypography>
-        <CustomTypography gutterBottom className="ts-secondary" variant={sizes.sm?"h6":"h5"}>
+        <CustomTypography gutterBottom className="ts-secondary" variant={sizes.sm?"h6":"h5"} align="center">
           يمتاز مكتبنا عن غيرة من مكاتب المحاماة المعتمدة الاخري في الاخلاقيات
           التي تسير آلية العمل داخل مكتبنا,بالاضافة الي مبادئ المحامين و الشركاء
           العاملين في المكتب و المؤمنين بأهمية تطوير الذات علي المستوي العملي و
           القانوني سعيا منهم لتحويل مكتبنالشركة محاماة دولية في مصر. فقد شهد
           عملاؤنا بقوة مكتبنا و ثقة التعامل معنا و المبادئ التالية ما ستجدها عند
-          التعامل معنا:
+          التعامل معنا
         </CustomTypography>
       </Stack>
 

@@ -80,27 +80,22 @@ export const CustomDrawer = styled(Drawer)(() => ({
 
 export const CustomBox = styled(Box)(() => ({
   boxSizing: "border-box",
-  // padding: "10px",
   // border: "2px solid yellow",
 
   "&.section-one,&.second-section, &.section-three, &.section-four ,&.section-five,&.section-six ,&.section-seven,&.section-eight,&.section-nine,&.section-eleven,&.section-tweleve,&.footer, &.blog":
     {
-      padding: "10px 5vw",
-      minHeight: "80dvh",
+      padding: "10px 2vw",
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
-      // alignItem: "center",
-      // "scroll-snap-align": "start",
     },
+
   "&.blog": {
     padding: "0px 5vw",
     minHeight: "40dvh",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    // alignItem: "center",
-    // "scroll-snap-align": "start",
   },
 
   "&.section-one": {
@@ -113,6 +108,7 @@ export const CustomBox = styled(Box)(() => ({
 
   "&.second-section": {
     position: "relative",
+    backgroundColor: "#002240",
     "&:before": {
       content: "''",
       width: "100%",
@@ -122,21 +118,15 @@ export const CustomBox = styled(Box)(() => ({
       left: "50%",
       boxSizing: "border-box",
       translate: "-50% -50%",
-      // border: "2px solid red",
-
       animation: `${backgroundAnimation} 4s linear infinite`,
       animationFillMode: "both",
-      // animationTimeline: "scroll(y)",
     },
-
-    backgroundColor: "#002240",
-    // padding: "0px 5vw",
   },
+
   "&.section-three": {
     backgroundColor: "#0D1429",
-    // height: "75vh",
-    // padding: "0px 5vw",
   },
+  
   "&.section-four ,&.blog": {
     backgroundColor: "#0A1328",
     "& ::-webkit-scrollbar": {
@@ -185,6 +175,7 @@ export const CustomBox = styled(Box)(() => ({
     backgroundColor: "#0D1B36",
   },
   "&.section-tweleve": {
+    // backgroundColor: "red",
     backgroundColor: "#0D1B36",
   },
 }));
@@ -448,7 +439,7 @@ export const IconContainer = styled(IconButton)(() => ({
 }));
 
 export const SlideItem = styled(Box)(() => ({
-  // border: "5px solid yellow",
+  // border: "5px solid red",
   // padding: "32px",
   direction: "rtl",
   maxWidth: "900px",
@@ -587,9 +578,9 @@ export const CustomTypography = styled(Typography)(() => ({
   "&.section-five-secondary": {
     lineHeight: "30px",
   },
-  "&.section-six-primary": {
-    textAlign: "center",
-  },
+  // "&.section-six-primary": {
+  //   // textAlign: "center",
+  // },
   "&.footer-last": {
     marginBlock: "10px",
     textAlign: "center",
