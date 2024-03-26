@@ -158,6 +158,7 @@ export const useBlogs = () => {
    //update blog
    const updateBlog = async (id,blogData) => {
     try {
+      
       // set loading with true
       setLoading(true);
       const response = await fetch(`${serverUrl}/api/blogs/${id}`, {
@@ -167,6 +168,7 @@ export const useBlogs = () => {
         // },
         body: blogData,
       });
+
       const json = await response.json();
       if (!response.ok) {
         setLoading(false);
