@@ -110,7 +110,7 @@ const Blogs = () => {
     fd.append("category", category.current.value);
     fd.append("date", new Date().toISOString());
     fd.append("metaKeys", metaKeys.current.value);
-    // fd.append("image", image.current.files[0]);
+    fd.append("image", image.current.files[0]);
     addBlog(fd);
     
     dialogTriggerhandler();
