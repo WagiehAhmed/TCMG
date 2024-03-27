@@ -2,13 +2,13 @@
 //vercel
 export const serverUrl = "https://tcmg-back-end.vercel.app";
 
-//cyclic
-// export const serverUrl = "https://real-gold-sawfish-veil.cyclic.app";
-
 
 //localhost
 // export const serverUrl = "http://localhost:2000";
 
+
+//cyclic
+// export const serverUrl = "https://real-gold-sawfish-veil.cyclic.app";
 
 
 
