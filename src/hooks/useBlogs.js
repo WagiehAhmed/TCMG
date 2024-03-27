@@ -119,7 +119,6 @@ export const useBlogs = () => {
         setLoading(false);
       }
       storeDispatch({ type: "ADD_BLOG", payload: response.data.blog });
-      console.log( response.data.uploadedImage)
       setLoading(false);
     } catch (error) {
       console.log(error);
