@@ -104,11 +104,11 @@ const Dashboard = () => {
     setOpen(false);
   };
 
-  useEffect(() => {
-    if (!localStorage.getItem("token")) {
-      navigate("/home", { replace: true });
-    }
-  });
+  // useEffect(() => {
+  //   if (!localStorage.getItem("token")) {
+  //     navigate("/home", { replace: true });
+  //   }
+  // });
   
   // logoutHandler
   const logoutHandler = () => {
