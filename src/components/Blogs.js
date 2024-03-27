@@ -51,7 +51,7 @@ const Blogs = () => {
   const title = useRef();
   const description = useRef();
   // const content = useRef();
-  // const image = useRef();
+  const image = useRef();
   const category = useRef();
   const metaKeys = useRef();
   const title2 = useRef();
@@ -98,38 +98,21 @@ const Blogs = () => {
 
   const editorRef = useRef(null);
   // console.log(editorRef.current.getContent())
-  
-  const [imageDataAsUrl, setImageDataAsUrl] = useState("");
-  function preview(file) {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onloadend = () => {
-      setImageDataAsUrl(reader.result);
-    };
-  }
-  
+ 
+
   //addBlogHandler
   const addBlogHandler = (e) => {
     e.preventDefault();
     const fd = new FormData();
-    // fd.append("title", title.current.value);
-    // fd.append("description", description.current.value);
-    // fd.append("content", editorRef.current.getContent({ format: "text" }));
-    // fd.append("category", category.current.value);
-    // fd.append("date", new Date().toISOString());
-    // fd.append("metaKeys", metaKeys.current.value);
-    // fd.append("image", image.current.files[0]);
-    // addBlog(fd);
+    fd.append("title", title.current.value);
+    fd.append("description", description.current.value);
+    fd.append("content", editorRef.current.getContent({ format: "text" }));
+    fd.append("category", category.current.value);
+    fd.append("date", new Date().toISOString());
+    fd.append("metaKeys", metaKeys.current.value);
+    fd.append("image", image.current.files[0]);
+    addBlog(fd);
     
-    addBlog({
-      title:title.current.value,
-      description:description.current.value,
-      content:editorRef.current.getContent({ format: "text" }),
-      category: category.current.value,
-      date:new Date().toISOString(),
-      metaKeys:metaKeys.current.value,
-      image:imageDataAsUrl
-    });
     dialogTriggerhandler();
   };
 
@@ -312,11 +295,10 @@ const Blogs = () => {
                   <CustomTextFeild
                     type="file"
                     accept="image/*"
-                    // inputRef={image}
+                    inputRef={image}
                     // label="Image"
                     key="Image"
                     name="image"
-                    onChange={(e)=>{preview(e.target.files[0])}}
                     required
                   />
                 </CustomGrid>
