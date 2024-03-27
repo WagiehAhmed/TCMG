@@ -1,6 +1,6 @@
 
 //vercel
-export const serverUrl = "https://tcmg-back-end.vercel.app";
+// export const serverUrl = "https://tcmg-back-end.vercel.app";
 
 
 //localhost
@@ -8,6 +8,7 @@ export const serverUrl = "https://tcmg-back-end.vercel.app";
 
 
 //cyclic
+export const serverUrl = "https://long-bass-umbrella.cyclic.app";
 // export const serverUrl = "https://real-gold-sawfish-veil.cyclic.app";
 
 
