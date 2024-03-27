@@ -111,7 +111,7 @@ export const useBlogs = () => {
       const response = await axios({
         method: "POST",
         url: `${serverUrl}/api/blogs`,
-        headers: { "Content-Type": "multipart/form-data" },
+        headers: { "Content-Type": `multipart/form-data; boundary=${blogData._boundary}` },
         data: blogData,
       });
 
