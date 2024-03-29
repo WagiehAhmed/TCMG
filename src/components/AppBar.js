@@ -92,7 +92,7 @@ const AppBar = ({ openSideDrawer, sizes }) => {
                 i18n.changeLanguage("en");
               }}
             >
-              <CustomTypography>EN</CustomTypography>
+              <CustomTypography>AR</CustomTypography>
             </Button>
           ) : (
             <Button
@@ -100,7 +100,7 @@ const AppBar = ({ openSideDrawer, sizes }) => {
                 i18n.changeLanguage("ar");
               }}
             >
-              <CustomTypography>AR</CustomTypography>
+              <CustomTypography>EN</CustomTypography>
             </Button>
           )}
         </CustomStack>
