@@ -82,7 +82,7 @@ const AppBar = ({ openSideDrawer, sizes }) => {
         {/* languages */}
         <CustomStack className="horizontal" sizes={sizes}>
           <Button>
-            <CustomTypography>فروعنا</CustomTypography>
+            <CustomTypography sx={{textTransform:"capitalize"}}>{t("ourBranches")}</CustomTypography>
           </Button>
 
           <Divider orientation="vertical" flexItem color="white" />

@@ -14,6 +14,8 @@ import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { useTranslation } from "react-i18next";
 
+import EastIcon from '@mui/icons-material/East';
+
 const SecondSection = ({ sizes }) => {
   const { t, i18n } = useTranslation();
   var dir;
@@ -41,8 +43,11 @@ const SecondSection = ({ sizes }) => {
     initialSlide: 0,
   };
   return (
-    <CustomBox className="second-section" sizes={sizes}
-    sx={{minHeight:{xs:"60dvh",md:"70dvh",lg:"90dvh"}}}>
+    <CustomBox
+      className="second-section"
+      sizes={sizes}
+      sx={{ minHeight: { xs: "60dvh", md: "70dvh", lg: "90dvh" } }}
+    >
       <Slider
         {...settings}
         ref={(slider) => {
@@ -50,10 +55,11 @@ const SecondSection = ({ sizes }) => {
         }}
       >
         <Box>
-          <SlideItem>
+          <SlideItem sx={{ direction: i18n.dir(i18n.language) }}>
             <CustomTypography
               className="ss-primary"
               variant={sizes.sm ? "h3" : "h1"}
+              align={i18n.dir(i18n.language) == "rtl" ? "right" : "left"}
             >
               {t("sectionTwoS1T")}
             </CustomTypography>
@@ -70,15 +76,19 @@ const SecondSection = ({ sizes }) => {
                 alignItems: "center",
               }}
             >
-              <CustomTypography>اطلب الان استشارة فورية</CustomTypography>
+              <CustomTypography>{t("ask")}</CustomTypography>
               <IconContainer>
-                <KeyboardBackspaceIcon />
+                {i18n.dir(i18n.language) == "ltr" ? (
+                  <EastIcon />
+                ) : (
+                  <KeyboardBackspaceIcon />
+                )}
               </IconContainer>
             </Box>
           </SlideItem>
         </Box>
         <Box>
-          <SlideItem>
+          <SlideItem sx={{ direction: i18n.dir(i18n.language) }}>
             <CustomTypography
               className="ss-primary"
               variant={sizes.sm ? "h3" : "h1"}
@@ -88,6 +98,7 @@ const SecondSection = ({ sizes }) => {
             <CustomTypography
               className="ss-secondary"
               variant={sizes.sm ? "h6" : "h5"}
+              align={i18n.dir(i18n.language) == "rtl" ? "right" : "left"}
             >
               {t("sectionTwoS2B")}
             </CustomTypography>
@@ -98,9 +109,9 @@ const SecondSection = ({ sizes }) => {
                 alignItems: "center",
               }}
             >
-              <CustomTypography>اطلب الان استشارة فورية</CustomTypography>
+              <CustomTypography>{t("ask")}</CustomTypography>
               <IconContainer>
-                <KeyboardBackspaceIcon />
+              {i18n.dir(i18n.language)=="ltr"?<EastIcon/>:<KeyboardBackspaceIcon />}
               </IconContainer>
             </Box>
           </SlideItem>

@@ -6,13 +6,15 @@ import {
   IconContainer,
 } from "../../styles";
 import { Box, Divider } from "@mui/material";
-
+import EastIcon from '@mui/icons-material/East';
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import  KeyboardBackspaceIcon  from '@mui/icons-material/KeyboardBackspace';
+import { useTranslation } from "react-i18next";
 
 const Footer = ({ sizes }) => {
+  const {t,i18n} = useTranslation();
   return (
     <CustomBox className="footer">
       <CustomStack className="footer">
@@ -26,11 +28,14 @@ const Footer = ({ sizes }) => {
             //   margin: sizes.md ? "15px 10px" : "30px 20px",
             borderBottom:"2px solid white",
             padding:"10px 0px",
+            dir:i18n.dir(i18n.language)
+
             }}
           >
-            <CustomTypography variant={sizes.sm?"h5":"h3"}>أسال محامي</CustomTypography>
+            <CustomTypography variant={sizes.sm?"h5":"h3"}> {t("footerR1P1")}</CustomTypography>
             <IconContainer>
-              <KeyboardBackspaceIcon />
+            {i18n.dir(i18n.language)=="ltr"?<EastIcon/>:<KeyboardBackspaceIcon />}
+
             </IconContainer>
           </Box>
 
@@ -41,12 +46,13 @@ const Footer = ({ sizes }) => {
               alignItems: "center",
             //   margin: sizes.md ? "15px 5px" : "30px 10px",
             borderBottom:"2px solid white",
-            padding:"10px 0px",
+            padding:"10px 0px"
             }}
           >
-            <CustomTypography variant={sizes.sm?"h5":"h3"}>أنضم ألينا</CustomTypography>
+            <CustomTypography variant={sizes.sm?"h5":"h3"}>{t("footerR1P2")}</CustomTypography>
             <IconContainer>
-              <KeyboardBackspaceIcon />
+              {i18n.dir(i18n.language)=="ltr"?<EastIcon/>:<KeyboardBackspaceIcon />}
+              
             </IconContainer>
           </Box>
         </CustomStack>
@@ -56,10 +62,11 @@ const Footer = ({ sizes }) => {
           className="footer-horizontal2"
         >
           <Box>
-            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>أخبار ورؤي</CustomTypography>
-            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>تواصلوا معنا</CustomTypography>
-            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>الخدمات القانونية</CustomTypography>
-            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>الاستشارات القانونية</CustomTypography>
+            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>{t("footerR2S4")}</CustomTypography>
+            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>{t("footerR2S5")}</CustomTypography>
+            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}> {t("footerR2S6")}</CustomTypography>
+            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>
+            {t("footerR2S7")}</CustomTypography>
           </Box>
           <Divider
             flexItem
@@ -83,9 +90,9 @@ const Footer = ({ sizes }) => {
             sx={{ border: "1px solid white" }}
           />
           <Box>
-            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>فريق العمل</CustomTypography>
-            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>لماذا أخترتنا</CustomTypography>
-            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>أراءالعملاء</CustomTypography>
+            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}> {t("footerR2S1")}</CustomTypography>
+            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>{t("footerR2S2")} </CustomTypography>
+            <CustomTypography sx={{ textAlign: sizes.md ? "center" : "start"}}>{t("footerR2S3")}</CustomTypography>
           </Box>
         </CustomStack>
 
@@ -94,15 +101,13 @@ const Footer = ({ sizes }) => {
           className="footer-horizontal3"
           sx={{ width: sizes.md ? "100%" : "60%" ,flexDirection:sizes.xs?"column":"row"}}
         >
-          <CustomTypography>الاشعارات القانونية</CustomTypography>
-          <CustomTypography>سياسة الخصوصية</CustomTypography>
-          <CustomTypography>خريطة الموقع</CustomTypography>
+          <CustomTypography>{t("footerR2S8")}</CustomTypography>
+          <CustomTypography> {t("footerR2S9")}</CustomTypography>
+          <CustomTypography>{t("footerR2S10")}</CustomTypography>
         </CustomStack>
 
         <CustomTypography className="footer-last">
-          TCMG هو أكبر مكتب محاماة في الشرق الاوسط يعمل من خلال كيابات قانونية
-          منفصلة و متميزة و مختلفة, جميع حقوق النسخ و النشر محفوظة 2024المجموعة
-          التجارية و البحرية للمحاماة.
+        {t("footerR2S11")}
         </CustomTypography>
       </CustomStack>
     </CustomBox>

@@ -1,8 +1,10 @@
 import React from "react";
 import { CustomBox, CustomGrid, CustomStack, CustomTypography } from "../../styles";
 import { Divider } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const SectionEight = ({sizes}) => {
+  const {t} = useTranslation();
   return (
     <CustomBox className="section-eight" sizes={sizes}>
       <CustomGrid
@@ -30,7 +32,7 @@ const SectionEight = ({sizes}) => {
                 color: "black",
               }}
             >
-              مكاتب محاماة أقليمية
+              {t("sectionEight4")}
             </CustomTypography>
           </CustomStack>
         </CustomGrid>
@@ -44,7 +46,7 @@ const SectionEight = ({sizes}) => {
                 color: "black",
                 fontWeight: "bold",
               }}
-            >
+              >
               20
             </CustomTypography>
             <CustomTypography
@@ -53,8 +55,8 @@ const SectionEight = ({sizes}) => {
                 textAlign: "center",
                 color: "black",
               }}
-            >
-              سنين الخبرة
+              >
+              {t("sectionEight3")}
             </CustomTypography>
           </CustomStack>
         </CustomGrid>
@@ -68,7 +70,7 @@ const SectionEight = ({sizes}) => {
                 color: "black",
                 fontWeight: "bold",
               }}
-            >
+              >
               50
             </CustomTypography>
             <CustomTypography
@@ -77,8 +79,8 @@ const SectionEight = ({sizes}) => {
                 textAlign: "center",
                 color: "black",
               }}
-            >
-              عدد الخبراء
+              >
+              {t("sectionEight2")}
             </CustomTypography>
           </CustomStack>
         </CustomGrid>
@@ -92,7 +94,7 @@ const SectionEight = ({sizes}) => {
                 color: "black",
                 fontWeight: "bold",
               }}
-            >
+              >
               400+
             </CustomTypography>
             <CustomTypography
@@ -101,8 +103,8 @@ const SectionEight = ({sizes}) => {
                 textAlign: "center",
                 color: "black",
               }}
-            >
-              العلاء
+              >
+              {t("sectionEight1")}
             </CustomTypography>
           </CustomStack>
         </CustomGrid>

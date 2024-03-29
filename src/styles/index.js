@@ -439,9 +439,8 @@ export const IconContainer = styled(IconButton)(() => ({
 }));
 
 export const SlideItem = styled(Box)(() => ({
-  // border: "5px solid red",
+  // border: "5px solid green",
   // padding: "32px",
-  direction: "rtl",
   maxWidth: "900px",
   margin: "0px auto",
   padding: "5px",

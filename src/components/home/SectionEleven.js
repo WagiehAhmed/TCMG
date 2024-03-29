@@ -14,9 +14,11 @@ import { useBlogs } from "../../hooks/useBlogs";
 import { useStore } from "../../hooks/useStore";
 import { serverUrl } from './../../util/serverURL';
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const SectionEleven = ({ sizes }) => {
 
+  const {t} = useTranslation();
   const navigate = useNavigate();
   const { blogs } = useStore();
   const { loading, error, getBlogs } = useBlogs();
@@ -39,16 +41,14 @@ const SectionEleven = ({ sizes }) => {
             className="fs-primary"
             variant={sizes.sm ? "h3" : sizes.lg ? "h2" : "h1"}
           >
-            أحدث المقالات
+            {t("sectionElevenS1")}
           </CustomTypography>
           <CustomTypography
             gutterBottom
             className="fs-secondary"
             variant={sizes.sm ? "h6" : "h5"}
-          >
-            تعلم أكثر من المكتبة القانونية المتكاملةو أمتلك معرفة أوسع وأعمق في
-            البيئة القانونية من خلال أستكشاف أحدث التطورات و المستجدات , و أستفد
-            من مجموعة متنوعة من المصادرالقانونية المتكاملة.
+            >
+            {t("sectionElevenS2")}
           </CustomTypography>
 
           <Box
@@ -57,8 +57,10 @@ const SectionEleven = ({ sizes }) => {
               flexDirection: "row",
               alignItems: "center",
             }}
-          >
-            <CustomTypography> أقراء المزيد</CustomTypography>
+            >
+            <CustomTypography> 
+            {t("more")}
+              </CustomTypography>
             <IconContainer>
               <KeyboardBackspaceIcon />
             </IconContainer>
@@ -72,13 +74,12 @@ const SectionEleven = ({ sizes }) => {
           }}
         >
           <CustomStack className="section-eleven-subContainer">
-           {blogs !== undefined && blogs.map((blog)=>(
+           {/* {blogs !== undefined && blogs.map((blog)=>(
              <Box
              sx={{
                display: "flex",
                flexDirection: "column",
                alignItems: "flex-start",
-               // border: "2px solid yellow",
                height: "fit-content",
                margin: sizes.md ? "15px 0px" : "30px 0px",
                width: sizes.md ? "100%" : "80%",
@@ -91,7 +92,6 @@ const SectionEleven = ({ sizes }) => {
                sizes={sizes}
              >
                <CustomImage src={`${serverUrl}/blogs/${blog.image}`}/>
-               {/* <CustomImage src={blog.image}/> */}
 
              </CustomImageContainer>
 
@@ -100,7 +100,6 @@ const SectionEleven = ({ sizes }) => {
                className="section-eleven-primary"
                variant={sizes.sm ? "h5" : "h6"}
              >
-               {/* محامي في مصر */}
                {blog.title}
              </CustomTypography>
              <CustomTypography
@@ -108,11 +107,7 @@ const SectionEleven = ({ sizes }) => {
                className="section-eleven-secondary"
                variant={sizes.sm ? "h6" : "p"}
              >
-               {/* علي مر السنين و قد تم الاعتراف بامحامي المصري كونة أحد أجدر رجال
-               القانونفي تولي المسائل القانونية, فقد عرف بعقليتة الاستراتيجة
-               العالية و امتلاكة المقدرة الفائقة في أدارة الازمات و فض
-               المنازعات المحلية و الدولية في كثير من بلاد الوطن العربي في شتي
-               فوع القانون. */}
+              
                {blog.content}
              </CustomTypography>
              <CustomTypography
@@ -120,12 +115,54 @@ const SectionEleven = ({ sizes }) => {
                className="section-eleven-primary"
                variant={sizes.sm ? "h5" : "h6"}
                >
-               {/* 28يناير, 9دقايق */}
                {blog.date}
              </CustomTypography>
            </Box>
-           ))}
-            {/* <Box
+           ))} */}
+           
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                //border: "2px solid yellow",
+                height: "fit-content",
+                margin: sizes.md ? "15px 0px" : "30px 0px",
+                width: sizes.md ? "100%" : "80%",
+                "scroll-snap-align": "center",
+              }}
+            >
+              <CustomImageContainer
+                className="section-eleven-image-container"
+                sizes={sizes}
+              >
+                <CustomImage src="../images/TCMG social media posts batch 2-07.jpg" />
+              </CustomImageContainer>
+
+              <CustomTypography
+                gutterBottom
+                className="section-eleven-primary"
+                variant={sizes.sm ? "h5" : "h6"}
+              >
+                {t("sectionTenS1t")}
+              </CustomTypography>
+              {/* <CustomTypography
+                gutterBottom
+                className="section-eleven-primary"
+                variant={sizes.sm ? "h5" : "h6"}
+              >
+                28يناير, 9دقايق
+              </CustomTypography> */}
+              <CustomTypography
+                gutterBottom
+                className="section-eleven-secondary"
+                variant={sizes.sm ? "h6" : "p"}
+              >  
+                {t("sectionTenS1b")}
+              
+              </CustomTypography>
+            </Box>
+            <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
@@ -149,24 +186,21 @@ const SectionEleven = ({ sizes }) => {
                 className="section-eleven-primary"
                 variant={sizes.sm ? "h5" : "h6"}
               >
-                تأسيس شركة في السعودية
+                {t("sectionTenS2t")}
               </CustomTypography>
-              <CustomTypography
+              {/* <CustomTypography
                 gutterBottom
                 className="section-eleven-primary"
                 variant={sizes.sm ? "h5" : "h6"}
-              >
+                >
                 28يناير, 9دقايق
-              </CustomTypography>
+              </CustomTypography> */}
               <CustomTypography
                 gutterBottom
                 className="section-eleven-secondary"
                 variant={sizes.sm ? "h6" : "p"}
-              >
-                هي خطوة جوهرية للعديد من رواد الاعمال و المستثمرين الراغبين في
-                استغلال الفرص الاقتصادية المتاحة في البلاد, حيث تعد المملكة
-                العربية السعودية واحدة من أكبر الاقتصادات في الشرق الاوسط و
-                تتمتع ببيئة استثمارية مشجعة و متطورة.
+                >
+                {t("sectionTenS2b")}
               </CustomTypography>
             </Box>
 
@@ -181,11 +215,11 @@ const SectionEleven = ({ sizes }) => {
                 width: sizes.md ? "100%" : "80%",
                 "scroll-snap-align": "center",
               }}
-            >
+              >
               <CustomImageContainer
                 className="section-eleven-image-container"
                 sizes={sizes}
-              >
+                >
                 <CustomImage src="../images/TCMG social media posts batch 2-11.jpg" />
               </CustomImageContainer>
 
@@ -193,26 +227,22 @@ const SectionEleven = ({ sizes }) => {
                 gutterBottom
                 className="section-eleven-primary"
                 variant={sizes.sm ? "h5" : "h6"}
-              >
-                تسجيل العلامة التجارية
+                >
+                {t("sectionTenS3t")}
               </CustomTypography>
-              <CustomTypography
+              {/* <CustomTypography
                 gutterBottom
                 className="section-eleven-primary"
                 variant={sizes.sm ? "h5" : "h6"}
-              >
+                >
                 28يناير, 9دقايق
-              </CustomTypography>
+              </CustomTypography> */}
               <CustomTypography
                 gutterBottom
                 className="section-eleven-secondary"
                 variant={sizes.sm ? "h6" : "p"}
-              >
-                يمثل احد اهم الاجرائات القانونية المهمة لا فرد أو شركة ترغب في
-                حكاية هويتهاالتجارية و حقوقها الفكرية, حيث يضمن القانون حقوق
-                الملكية الفكرية للشركات و الافراد في استخدام اسماءتجارية, شعارات
-                تجارية ,تصاميم المنتجات الخاصة بهم و ذلك من خلال الاستعانة
-                بمحامي العلامات تجارية محترف.
+                >
+                {t("sectionTenS3b")}
               </CustomTypography>
             </Box>
             <Box
@@ -226,11 +256,11 @@ const SectionEleven = ({ sizes }) => {
                 width: sizes.md ? "100%" : "80%",
                 "scroll-snap-align": "center",
               }}
-            >
+              >
               <CustomImageContainer
                 className="section-eleven-image-container"
                 sizes={sizes}
-              >
+                >
                 <CustomImage src="../images/TCMG sm posts batch 2-09 (1).jpg" />
               </CustomImageContainer>
 
@@ -238,27 +268,24 @@ const SectionEleven = ({ sizes }) => {
                 gutterBottom
                 className="section-eleven-primary"
                 variant={sizes.sm ? "h5" : "h6"}
-              >
-                حماية الملكية الفكرية
+                >
+                {t("sectionTenS4t")}
               </CustomTypography>
-              <CustomTypography
+              {/* <CustomTypography
                 gutterBottom
                 className="section-eleven-primary"
                 variant={sizes.sm ? "h5" : "h6"}
-              >
+                >
                 28يناير, 9دقايق
-              </CustomTypography>
+              </CustomTypography> */}
               <CustomTypography
                 gutterBottom
                 className="section-eleven-secondary"
                 variant={sizes.sm ? "h6" : "p"}
-              >
-                تعد أحد افرع الملكية حيث لا تقتصر علي كونها ملكية مادية فقط خاصة
-                بالعقارات, و يندمج تحتها براءات الاختراع و حقوق النشر و العلامات
-                التجارية, لذا و قت باتت الحاحة تتطلب توكيل المحامي المتخصص
-                بحماية الملكية الفكرية.
+                >
+                  {t("sectionTenS4b")}
               </CustomTypography>
-            </Box> */}
+            </Box> 
           </CustomStack>
         </CustomBox>
       </CustomStack>

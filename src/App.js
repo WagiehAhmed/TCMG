@@ -12,11 +12,13 @@ import { useTranslation } from "react-i18next";
 import { formatDistanceToNow } from "date-fns";
 import { Outlet } from "react-router-dom";
 function App() {
+
   const { t, i18n } = useTranslation();
   useEffect(() => {
-    const dir = i18n.dir(i18n.language)
-    document.documentElement.dir = dir
+    document.documentElement.dir = i18n.dir(i18n.language)
   }, [i18n, i18n.language]);
+
+
   // use media hook to get access to different screens
   const matches = {
     xs: useMediaQuery(theme.breakpoints.down("sm")),

@@ -10,8 +10,11 @@ import {
 
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { Box } from "@mui/material";
+import { useTranslation } from "react-i18next";
+import EastIcon from '@mui/icons-material/East';
 
 const SectionFive = ({ sizes }) => {
+  const {t,i18n} = useTranslation();
   return (
     <CustomBox
       className="section-five"
@@ -30,19 +33,14 @@ const SectionFive = ({ sizes }) => {
             className="fs-primary"
             variant={sizes.sm ? "h3" : sizes.lg ? "h2" : "h1"}
           >
-            محامين خبراء في مجالات القانون و الثضايا المختلفة
+            {t("sectionFiveS1")}
           </CustomTypography>
           <CustomTypography
             gutterBottom
             className="fs-secondary"
             variant={sizes.sm ? "h6" : "h5"}
-          >
-            ما يميز مكتبنا عن مكاتب المحاماة الاخري,هة انفرادنا بالتخصصات
-            القانونيةالتي تطلب خبرة قانونيةو فكر استراتيجي من الجرجة الاولي.حيث
-            نفخر بوجود شركائنا المتخصصين في محالات القانون
-            المختلفة,والمستعدونلدعم عملائنا الكرام بكل السبل الممكنة لتحقيق
-            اهدافهم بأسرع وقت و أعلي جودةممكنة, سعيا منا لنصبح أفصضل شركة محاماة
-            في مصر في المستقبل القريب.
+            >
+            {t("sectionFiveS2")}
           </CustomTypography>
 
           <Box
@@ -52,9 +50,13 @@ const SectionFive = ({ sizes }) => {
               alignItems: "center",
             }}
           >
-            <CustomTypography>اطلب الان استشارة فورية</CustomTypography>
+            <CustomTypography
+            >{t("ask")}
+
+            </CustomTypography>
             <IconContainer>
-              <KeyboardBackspaceIcon />
+            {i18n.dir(i18n.language)=="ltr"?<EastIcon/>:<KeyboardBackspaceIcon />}
+
             </IconContainer>
           </Box>
         </CustomBox>
@@ -89,18 +91,14 @@ const SectionFive = ({ sizes }) => {
                 gutterBottom
                 className="section-five-primary"
                 variant={sizes.sm ? "h5" : "h6"}
-              >
-                القضايا التجارية
+              >{t("sectionFiveSlide1T")}
               </CustomTypography>
               <CustomTypography
                 gutterBottom
                 className="section-five-secondary"
                 variant={sizes.sm ? "h6" : "p"}
-              >
-                تتطلب القضايا التجارية الي محامين اصحاب معارفو خبرات طويلة.لذا
-                يعد توكيل محامي تجاري من القرارات المهمة لضمان حقوق الموكل. و مع
-                خبرة تفوق ال30 عاما في القضايا التجارية,نضمن لك النص في هذا
-                النوع من القضاياو الذي يساعد علي تحقيق اهدافك التجارية.
+                >
+                {t("sectionFiveSlide1b")}
               </CustomTypography>
             </Box>
             <Box
@@ -126,19 +124,15 @@ const SectionFive = ({ sizes }) => {
                 gutterBottom
                 className="section-five-primary"
                 variant={sizes.sm ? "h5" : "h6"}
-              >
-                القضايا الجنائية
+                >
+                {t("sectionFiveSlide2T")}
               </CustomTypography>
               <CustomTypography
                 gutterBottom
                 className="section-five-secondary"
                 variant={sizes.sm ? "h6" : "p"}
-              >
-                هل تبحث عن محامي جنائي يقوم بالدفاع و المرافعةأمام المحاكم
-                الجنائية متعهدا علي نصرك؟ مع المجموعة التجارية و البحرية سندعمك
-                بأفضل محامي جنايات يتولي أمر القضايا الجنائية و يفوم بحضور
-                التحقيقات أمام النيابة العامة و يركذ خهدة و خبرتة في تحقيق النصر
-                في قضيتك.
+                >
+                {t("sectionFiveSlide2b")}
               </CustomTypography>
             </Box>
             <Box
@@ -152,11 +146,11 @@ const SectionFive = ({ sizes }) => {
                 "scroll-snap-align": "center",
                 width: sizes.md ? "100%" : "80%",
               }}
-            >
+              >
               <CustomImageContainer
                 className="section-five-image"
                 sizes={sizes}
-              >
+                >
                 <CustomImage src="../images/القضايا الدولية.png" />
               </CustomImageContainer>
 
@@ -164,19 +158,15 @@ const SectionFive = ({ sizes }) => {
                 gutterBottom
                 className="section-five-primary"
                 variant={sizes.sm ? "h5" : "h6"}
-              >
-                القضايا الدولية
+                >
+                {t("sectionFiveSlide3T")}
               </CustomTypography>
               <CustomTypography
                 gutterBottom
                 className="section-five-secondary"
                 variant={sizes.sm ? "h6" : "p"}
-              >
-                نقدم الدعم الكافي من الدراسات و الاستشارات لجميع عملائنا
-                الدوليين و المحليين في التقاضي عبر المحاكم الدولية. فمن خلال
-                الخبرة في القانون الدولي,سندعمك بكحامي دولي متمرس مستعد لتولي
-                قضاياك الدولية و العمل علي تحقيق غايتك في التحكيم التجاري
-                الدولي.
+                >
+                {t("sectionFiveSlide3b")}
               </CustomTypography>
             </Box>
             <Box
@@ -190,11 +180,11 @@ const SectionFive = ({ sizes }) => {
                 "scroll-snap-align": "center",
                 width: sizes.md ? "100%" : "80%",
               }}
-            >
+              >
               <CustomImageContainer
                 className="section-five-image"
                 sizes={sizes}
-              >
+                >
                 <CustomImage src="../images/القضايا المدنية.png" />
               </CustomImageContainer>
 
@@ -202,19 +192,15 @@ const SectionFive = ({ sizes }) => {
                 gutterBottom
                 className="section-five-primary"
                 variant={sizes.sm ? "h5" : "h6"}
-              >
-                القضايا المدنية
+                >
+                {t("sectionFiveSlide4T")}
               </CustomTypography>
               <CustomTypography
                 gutterBottom
                 className="section-five-secondary"
                 variant={sizes.sm ? "h6" : "p"}
-              >
-                لدي مكتبنا محامون متخصصون في القضايا المدنية مستعدون لتولي كافة
-                انواع القضاياالناشئة عن العقود و المعاملات المدنية مع تقديم
-                الدعم الكافي من المرافعة و الدفاع أمام المحاكم لنصرة موكلينا.
-                فمن خلال التعاقد معنا, سيتولي أشهر محامي مدني في مكتبنا قضيتك و
-                يحقق لك النصر من خلال خبرتة ومعارفة.
+                >
+                {t("sectionFiveSlide4b")}
               </CustomTypography>
             </Box>
             <Box
@@ -228,11 +214,11 @@ const SectionFive = ({ sizes }) => {
                 "scroll-snap-align": "center",
                 width: sizes.md ? "100%" : "80%",
               }}
-            >
+              >
               <CustomImageContainer
                 className="section-five-image"
                 sizes={sizes}
-              >
+                >
                 <CustomImage src="../images/القضايا العقارية.png" />
               </CustomImageContainer>
 
@@ -240,19 +226,15 @@ const SectionFive = ({ sizes }) => {
                 gutterBottom
                 className="section-five-primary"
                 variant={sizes.sm ? "h5" : "h6"}
-              >
-                القضايا العقارية
+                >
+                {t("sectionFiveSlide5T")}
               </CustomTypography>
               <CustomTypography
                 gutterBottom
                 className="section-five-secondary"
                 variant={sizes.sm ? "h6" : "p"}
-              >
-                تقدم المجموعة التجارية و البحرية خدمات قانونية رائدة حول
-                المشكلات القانونية المتعلقة بالعقارات مثل قضايا التعويضات و
-                الحيازات العقارية و غيرها, سنقوم بدعمك بأفضل محامي عقارات
-                بمكتبنا لتولي قضيتكو يحقق اهدافك القانونية في القضايا العقارية و
-                في مجال التطوير العقاري داخل و خارج مصر.
+                >
+                {t("sectionFiveSlide5b")}
               </CustomTypography>
             </Box>
           </CustomStack>

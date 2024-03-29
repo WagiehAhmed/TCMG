@@ -13,6 +13,7 @@ import SectionTweleve from "./SectionTweleve";
 import { theme } from "../../styles/theme";
 import { useMediaQuery } from "@mui/material";
 import FirstSection from "./SectionOne";
+import SectionTen from "./SectionTen";
 
 const Home = () => {
      // use media hook to get access to different screens
@@ -34,8 +35,8 @@ const Home = () => {
       <SectionSeven sizes={matches} />
       <SectionEight sizes={matches} />
       <SectionNine sizes={matches} />
-      <SectionEight sizes={matches} />
-      <SectionEleven sizes={matches} />
+      <SectionTen sizes={matches} />
+      <SectionEleven sizes={matches} /> 
       <SectionTweleve sizes={matches} />
       <Footer sizes={matches} />
     </>

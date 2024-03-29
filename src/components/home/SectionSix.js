@@ -10,8 +10,10 @@ import {
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import Slider from "react-slick";
 import { Box, Card, CardMedia, Stack, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const SectionSix = ({ sizes }) => {
+  const { t } = useTranslation();
   var settings = {
     dots: false,
     arrows: false,
@@ -46,12 +48,17 @@ const SectionSix = ({ sizes }) => {
       sx={{ minHeight: { xs: "60dvh", md: "70dvh", lg: "80dvh" } }}
     >
       <CustomStack className="section-six-container">
-        <Stack sx={{alignItems:"center",marginBottom:sizes.md?"10px":"30px"}}>
+        <Stack
+          sx={{
+            alignItems: "center",
+            marginBottom: sizes.md ? "10px" : "30px",
+          }}
+        >
           <CustomTypography
             gutterBottom
             variant={sizes.sm ? "h5" : sizes.lg ? "h3" : "h2"}
           >
-            فريق العمل
+            {t("sectionSixS1")}
           </CustomTypography>
           <IconContainer>
             <KeyboardBackspaceIcon />
@@ -62,12 +69,7 @@ const SectionSix = ({ sizes }) => {
             sx={{ width: sizes.md ? "90%" : "70%" }}
             align="center"
           >
-            تتكون الهيكلة الادارية للجموعة التجارية و البحرية من أشهر محامين مصر
-            أصحاب الخبرات في تخصصات القضايا المحلية و الدولية المختلفة حيث يضم
-            المحامي محمد أضيف-الرئيس التنفيذي - مجموعة من الكوادرالبشريةالمتخصصة
-            في مجالات القانون المختلفة. ولأن الجودة و السرعة هي شعارنا, نعمل
-            بروح الفريق لدمج الخبرات و المعرفةالمراكطة في دعم عملائنا الكرام علي
-            تحقيق أهدافهم القانونية.
+            {t("sectionSixS2")}
           </CustomTypography>
         </Stack>
 
@@ -104,7 +106,7 @@ const SectionSix = ({ sizes }) => {
                     padding: "3px",
                   }}
                 >
-                  محمد أبوضيف
+                  {t("sectionSixSlideName")}
                 </Typography>
                 <Typography
                   variant="h6"
@@ -114,7 +116,7 @@ const SectionSix = ({ sizes }) => {
                     color: "#845F38",
                   }}
                 >
-                  الرئيس التنفيذي
+                  {t("sectionSixSlideTitle")}
                 </Typography>
               </Box>
             </Box>
@@ -142,7 +144,7 @@ const SectionSix = ({ sizes }) => {
                     padding: "3px",
                   }}
                 >
-                  محمد أبوضيف
+                  {t("sectionSixSlideName")}
                 </Typography>
                 <Typography
                   variant="h6"
@@ -152,7 +154,7 @@ const SectionSix = ({ sizes }) => {
                     color: "#845F38",
                   }}
                 >
-                  الرئيس التنفيذي
+                  {t("sectionSixSlideTitle")}
                 </Typography>
               </Box>
             </Box>

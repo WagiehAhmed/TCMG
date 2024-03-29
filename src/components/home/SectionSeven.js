@@ -11,8 +11,10 @@ import {
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import Slider from "react-slick";
 import { Box, Card, CardMedia, Stack, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const SectionSeven = ({ sizes }) => {
+  const { t } = useTranslation();
   var settings = {
     dots: false,
     arrows: false,
@@ -55,7 +57,7 @@ const SectionSeven = ({ sizes }) => {
           className="section-seven-primary"
           variant={sizes.sm ? "h5" : sizes.lg ? "h3" : "h2"}
         >
-          أراء عملائنا الكرام
+          {t("sectionSevenS1")}
         </CustomTypography>
         <IconContainer>
           <KeyboardBackspaceIcon />
@@ -98,7 +100,7 @@ const SectionSeven = ({ sizes }) => {
                         padding: "3px",
                       }}
                     >
-                      محمد أبوضيف
+                      {t("sectionSixSlideName")}
                     </Typography>
                     <Typography
                       variant="body1"
@@ -108,7 +110,7 @@ const SectionSeven = ({ sizes }) => {
                         color: "#845F38",
                       }}
                     >
-                      الرئيس التنفيذي
+                      {t("sectionSixSlideTitle")}
                     </Typography>
                   </Stack>
                 </CustomStack>
@@ -128,11 +130,7 @@ const SectionSeven = ({ sizes }) => {
                       color: "black",
                     }}
                   >
-                    بخبرة قانونية واسعة,نقدماستشارات قانونية لجميع العملاءمن
-                    ايدي نخبة من اكفا المحامين المتمرسين و افضل الشركاءبمستوي
-                    جديدي من الحلول القانونية المتكاملةز اطلب الان استشارة
-                    قانونية فورية وتواصل مع افضل مستشار قانوني واحصل علي الدعم
-                    القانوني لحل قضاياك و تحقيق اهدافك.
+                    {t("sectionSevenReview")}
                   </CustomTypography>
                 </Box>
               </Box>
@@ -165,7 +163,7 @@ const SectionSeven = ({ sizes }) => {
                         padding: "3px",
                       }}
                     >
-                      محمد أبوضيف
+                      {t("sectionSixSlideName")}
                     </Typography>
                     <Typography
                       variant="body1"
@@ -175,7 +173,7 @@ const SectionSeven = ({ sizes }) => {
                         color: "#845F38",
                       }}
                     >
-                      الرئيس التنفيذي
+                      {t("sectionSixSlideTitle")}
                     </Typography>
                   </Stack>
                 </CustomStack>
@@ -195,11 +193,7 @@ const SectionSeven = ({ sizes }) => {
                       color: "black",
                     }}
                   >
-                    بخبرة قانونية واسعة,نقدماستشارات قانونية لجميع العملاءمن
-                    ايدي نخبة من اكفا المحامين المتمرسين و افضل الشركاءبمستوي
-                    جديدي من الحلول القانونية المتكاملةز اطلب الان استشارة
-                    قانونية فورية وتواصل مع افضل مستشار قانوني واحصل علي الدعم
-                    القانوني لحل قضاياك و تحقيق اهدافك.
+                    {t("sectionSevenReview")}
                   </CustomTypography>
                 </Box>
               </Box>
@@ -214,7 +208,7 @@ const SectionSeven = ({ sizes }) => {
             alignItems: "center",
           }}
         >
-          <CustomTypography>مشاهدة كل الاراء</CustomTypography>
+          <CustomTypography>{t("sectionSevenS2")}</CustomTypography>
           <IconContainer>
             <KeyboardBackspaceIcon />
           </IconContainer>

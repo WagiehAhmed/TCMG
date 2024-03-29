@@ -9,8 +9,11 @@ import {
   Typography,
 } from "@mui/material";
 import Slider from "react-slick";
+import { useTranslation } from "react-i18next";
 
-const SectionThree = ({sizes}) => {
+const SectionThree = ({ sizes }) => {
+  const { t } = useTranslation();
+
   var settings = {
     dots: false,
     arrows: false,
@@ -41,20 +44,30 @@ const SectionThree = ({sizes}) => {
   };
 
   return (
-    <CustomBox className="section-three" sizes={sizes}
-    sx={{minHeight:{xs:"60dvh",md:"70dvh",lg:"90dvh"}}}>
-      <Stack alignItems="center" 
-      sx={{marginBottom:sizes.md?"10px":"30px"}}>
-        <CustomTypography gutterBottom className="ts-primary"variant={sizes.sm?"h3":"h1"} align="center">
-          لماذا تخترنا و بكل ثقة؟
+    <CustomBox
+      className="section-three"
+      sizes={sizes}
+      sx={{ minHeight: { xs: "60dvh", md: "70dvh", lg: "90dvh" } }}
+    >
+      <Stack
+        alignItems="center"
+        sx={{ marginBottom: sizes.md ? "10px" : "30px" }}
+      >
+        <CustomTypography
+          gutterBottom
+          className="ts-primary"
+          variant={sizes.sm ? "h3" : "h1"}
+          align="center"
+        >
+          {t("sectionThreeS1")}
         </CustomTypography>
-        <CustomTypography gutterBottom className="ts-secondary" variant={sizes.sm?"h6":"h5"} align="center">
-          يمتاز مكتبنا عن غيرة من مكاتب المحاماة المعتمدة الاخري في الاخلاقيات
-          التي تسير آلية العمل داخل مكتبنا,بالاضافة الي مبادئ المحامين و الشركاء
-          العاملين في المكتب و المؤمنين بأهمية تطوير الذات علي المستوي العملي و
-          القانوني سعيا منهم لتحويل مكتبنالشركة محاماة دولية في مصر. فقد شهد
-          عملاؤنا بقوة مكتبنا و ثقة التعامل معنا و المبادئ التالية ما ستجدها عند
-          التعامل معنا
+        <CustomTypography
+          gutterBottom
+          className="ts-secondary"
+          variant={sizes.sm ? "h6" : "h5"}
+          align="center"
+        >
+          {t("sectionThreeS2")}
         </CustomTypography>
       </Stack>
 
@@ -73,7 +86,7 @@ const SectionThree = ({sizes}) => {
                 padding: "7px",
               }}
             >
-              الثقة شعارنا
+              {t("sectionThreeSlide1")}
             </Typography>
           </Card>
         </Box>
@@ -83,17 +96,17 @@ const SectionThree = ({sizes}) => {
               sx={{ height: "300px" }}
               image="../images/logo.png"
               title="green iguana"
-            />
-              <Typography
-                variant="h5"
-                component="div"
-                sx={{
-                  textAlign: "center",
-                  padding: "7px",
-                }}
+              />
+            <Typography
+              variant="h5"
+              component="div"
+              sx={{
+                textAlign: "center",
+                padding: "7px",
+              }}
               >
-                حلول قانونية سريعة
-              </Typography>
+              {t("sectionThreeSlide2")}
+            </Typography>
           </Card>
         </Box>
         <Box>
@@ -102,7 +115,7 @@ const SectionThree = ({sizes}) => {
               sx={{ height: "300px" }}
               image="../images/logo.png"
               title="green iguana"
-            />
+              />
             <Typography
               variant="h5"
               component="div"
@@ -110,8 +123,8 @@ const SectionThree = ({sizes}) => {
                 textAlign: "center",
                 padding: "7px",
               }}
-            >
-              رضا العميل أولويتنا
+              >
+              {t("sectionThreeSlide3")}
             </Typography>
           </Card>
         </Box>

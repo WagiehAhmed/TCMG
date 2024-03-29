@@ -16,8 +16,10 @@ import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { Box, Button } from "@mui/material";
 import { useBlogs } from "../../hooks/useBlogs";
 import { useStore } from "../../hooks/useStore";
-
+import EastIcon from '@mui/icons-material/East';
+import { useTranslation } from "react-i18next";
 const SectionNine = ({ sizes }) => {
+  const {i18n} = useTranslation();
   
   return (
     <CustomBox className="section-nine">
@@ -70,7 +72,7 @@ const SectionNine = ({ sizes }) => {
               >
                 <CustomTypography>أرسال رسالة</CustomTypography>
                 <IconContainer>
-                  <KeyboardBackspaceIcon />
+                {i18n.dir(i18n.language)=="ltr"?<EastIcon/>:<KeyboardBackspaceIcon />}
                 </IconContainer>
               </Box>
             </CustomFormControl>
