@@ -86,7 +86,7 @@ const AppBar = ({ openSideDrawer, sizes }) => {
           </Button>
 
           <Divider orientation="vertical" flexItem color="white" />
-          {i18n.language == "ar" ? (
+          {i18n.language == "en" ? (
             <Button
               onClick={() => {
                 i18n.changeLanguage("ar");
