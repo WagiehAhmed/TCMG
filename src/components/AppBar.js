@@ -89,7 +89,7 @@ const AppBar = ({ openSideDrawer, sizes }) => {
           {i18n.language == "ar" ? (
             <Button
               onClick={() => {
-                i18n.changeLanguage("en");
+                i18n.changeLanguage("ar");
               }}
             >
               <CustomTypography>AR</CustomTypography>
@@ -97,7 +97,7 @@ const AppBar = ({ openSideDrawer, sizes }) => {
           ) : (
             <Button
               onClick={() => {
-                i18n.changeLanguage("ar");
+                i18n.changeLanguage("en");
               }}
             >
               <CustomTypography>EN</CustomTypography>
