@@ -48,12 +48,24 @@ const Blogs = () => {
   console.log("blogs");
   const [idForUpdate, setIdForUpdate] = useState();
   //needed refs
-  const title = useRef();
-  const description = useRef();
+  // const title = useRef();
+  // const description = useRef();
   // const content = useRef();
-  const image = useRef();
-  const category = useRef();
-  const metaKeys = useRef();
+  // const image = useRef();
+  // const category = useRef();
+  // const metaKeys = useRef();
+
+  ////////////////////////////////////////////////
+  const [title,setTitle] =useState("");
+  const [description,setDescription] =useState("");
+  const [content,setContent] =useState("");
+  const [image,setImage] =useState("");
+  const [category,setCategory] =useState("");
+  const [metaKeys,setMetaKeys] =useState("");
+  ////////////////////////////////////////////////
+
+
+
   const title2 = useRef();
   const description2 = useRef();
   const content2 = useRef();
@@ -77,11 +89,11 @@ const Blogs = () => {
   const [openDialog, setOpenDialog] = useState(false);
   const dialogTriggerhandler = () => {
     setOpenDialog(!openDialog);
-    title.current.value = "";
-    description.current.value = "";
-    // content.current.value = "";
-    category.current.value = "";
-    metaKeys.current.value = "";
+    // title.current.value = "";
+    // description.current.value = "";
+    // // content.current.value = "";
+    // category.current.value = "";
+    // metaKeys.current.value = "";
   };
 
   // dialog trigger
@@ -104,13 +116,13 @@ const Blogs = () => {
   const addBlogHandler = (e) => {
     e.preventDefault();
     const fd = new FormData();
-    fd.append("title", title.current.value);
-    fd.append("description", description.current.value);
+    fd.append("title", title);
+    fd.append("description", description);
     fd.append("content", editorRef.current.getContent({ format: "text" }));
-    fd.append("category", category.current.value);
+    fd.append("category", category);
     fd.append("date", new Date().toISOString());
-    fd.append("metaKeys", metaKeys.current.value);
-    fd.append("image", image.current.files[0]);
+    fd.append("metaKeys", metaKeys);
+    fd.append("image", image);
     addBlog(fd);
     
     dialogTriggerhandler();
@@ -228,23 +240,25 @@ const Blogs = () => {
               <CustomGrid container columns={{ xs: 1, md: 2 }}>
                 <CustomGrid item xs={1} className="form-item">
                   <CustomTextFeild
-                    inputRef={title}
+                    // inputRef={title}
+                    onChange={(e)=>{setTitle(e.target.value)}}
                     type="text"
                     label="Title"
                     key="Title"
                     name="title"
                     required
-                  />
+                    />
                 </CustomGrid>
                 <CustomGrid item xs={1} className="form-item">
                   <CustomTextFeild
-                    inputRef={description}
+                    onChange={(e)=>{setDescription(e.target.value)}}
+                    // inputRef={description}
                     type="text"
                     label="Description"
                     key="Description"
                     name="description"
                     required
-                  />
+                    />
                 </CustomGrid>
                 {/* <CustomGrid item xs={1} md={2} className="form-item">
                   <CustomTextFeild
@@ -256,11 +270,12 @@ const Blogs = () => {
                     required
                     multiline
                     rows={5}
-                  />
-                </CustomGrid> */}
+                    />
+                  </CustomGrid> */}
                 <CustomGrid item xs={2} className="form-item">
                   <CustomTextFeild
-                    inputRef={category}
+                    // inputRef={category}
+                    onChange={(e)=>{setCategory(e.target.value)}}
                     type="text"
                     label="Category"
                     key="Category"
@@ -270,13 +285,13 @@ const Blogs = () => {
                 </CustomGrid>
                 <CustomGrid item xs={2} className="form-item">
                   <Editor
-                    apiKey="9lp9eeqisok9205r9yxc5tbwc6h3fxm7h2qexagl3b2j5fe4"
+                apiKey="9lp9eeqisok9205r9yxc5tbwc6h3fxm7h2qexagl3b2j5fe4"
                     onInit={(evt, editor) => (editorRef.current = editor)}
                     init={{
                       plugins:
-                        "anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss",
+                      "anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss",
                       toolbar:
-                        "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
+                      "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
                       tinycomments_mode: "embedded",
                       tinycomments_author: "Author name",
                       mergetags_list: [
@@ -284,27 +299,29 @@ const Blogs = () => {
                         { value: "Email", title: "Email" },
                       ],
                       ai_request: (request, respondWith) =>
-                        respondWith.string(() =>
-                          Promise.reject("See docs to implement AI Assistant")
+                      respondWith.string(() =>
+                      Promise.reject("See docs to implement AI Assistant")
                         ),
                     }}
                     initialValue=""
-                  />
+                    />
                 </CustomGrid>
                 <CustomGrid item xs={1} className="form-item">
                   <CustomTextFeild
                     type="file"
                     accept="image/*"
-                    inputRef={image}
+                    onChange={(e)=>{setImage(e.target.files[0])}}
+                    // inputRef={image}
                     // label="Image"
                     key="Image"
                     name="image"
                     required
-                  />
+                    />
                 </CustomGrid>
                 <CustomGrid item xs={1} className="form-item">
                   <CustomTextFeild
-                    inputRef={metaKeys}
+                    onChange={(e)=>{setMetaKeys(e.target.value)}}
+                    // inputRef={metaKeys}
                     type="text"
                     label="keys"
                     key="keys"
@@ -322,6 +339,15 @@ const Blogs = () => {
           </CustomForm>
         </CustomDialogContent>
       </CustomDialog>
+
+
+
+
+
+
+
+
+
       <CustomDialog
         open={openUpdateDialog}
         TransitionComponent={Transition}
