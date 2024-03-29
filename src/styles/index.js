@@ -118,8 +118,8 @@ export const CustomBox = styled(Box)(() => ({
       left: "50%",
       boxSizing: "border-box",
       translate: "-50% -50%",
-      animation: `${backgroundAnimation} 4s linear infinite`,
-      animationFillMode: "both",
+      // animation: `${backgroundAnimation} 4s linear infinite`,
+      // animationFillMode: "both",
     },
   },
 
