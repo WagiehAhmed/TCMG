@@ -12,8 +12,10 @@ import { Box } from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import { useTranslation } from "react-i18next";
 
 const SectionTweleve = ({ sizes }) => {
+  const { t } = useTranslation();
   let sliderRef = useRef(null);
   const next = () => {
     sliderRef.slickNext();
@@ -49,10 +51,6 @@ const SectionTweleve = ({ sizes }) => {
           />
         </IconContainer>
 
-        <CustomTypography variant={sizes.md ? "h3" : "h1"}>
-          القاهرة
-        </CustomTypography>
-
         <IconContainer onClick={next} className="arrow-icon">
           <KeyboardArrowLeftIcon
             sx={{ fontSize: sizes.md ? "25px" : "70px" }}
@@ -67,20 +65,50 @@ const SectionTweleve = ({ sizes }) => {
       >
         {/* slide */}
         <Box>
-          <CustomImageContainer className="section-tweleve-image-container">
+          <CustomImageContainer
+            className="section-tweleve-image-container"
+            sx={{ position: "relative" }}
+          >
             <CustomImage
               src="../images/logo.png"
               className="section-tweleve-image"
             />
+            <CustomTypography
+              align="center"
+              variant={sizes.md ? "h3" : "h1"}
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%,-50%)",
+              }}
+            >
+              {t("cairo")}
+            </CustomTypography>
           </CustomImageContainer>
         </Box>
         {/* slide */}
         <Box>
-          <CustomImageContainer className="section-tweleve-image-container">
+          <CustomImageContainer
+            className="section-tweleve-image-container"
+            sx={{ position: "relative" }}
+          >
             <CustomImage
               src="../images/logo.png"
               className="section-tweleve-image"
             />
+            <CustomTypography
+              align="center"
+              variant={sizes.md ? "h3" : "h1"}
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%,-50%)",
+              }}
+            >
+              {t("giza")}
+            </CustomTypography>
           </CustomImageContainer>
         </Box>
       </Slider>

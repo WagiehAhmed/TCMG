@@ -40,7 +40,6 @@ const SectionNine = ({ sizes }) => {
                     placeholder={t("name")}
                     required
                     className="section-nine-form"
-                    dir="rtl"
                   />
                 </CustomGrid>
                 <CustomGrid item xs={1} className="form-item">
@@ -49,7 +48,6 @@ const SectionNine = ({ sizes }) => {
                     placeholder={t("email")}
                     className="section-nine-form"
                     required
-                dir={i18n.dir(i18n.language)}
                   />
                 </CustomGrid>
                 <CustomGrid item xs={1} md={2} className="form-item">
@@ -60,7 +58,6 @@ const SectionNine = ({ sizes }) => {
                     required
                     multiline
                     rows={5}
-                    dir={i18n.dir(i18n.language)}
                   />
                 </CustomGrid>
               </CustomGrid>
