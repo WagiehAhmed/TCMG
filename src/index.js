@@ -35,7 +35,9 @@ root.render(
           <Route path="/" element={<App />}>
             <Route path="home" element={<Home />} />
             <Route path="news" element={<News />} />
+            <Route path="الأخبار" element={<News />} />
             <Route path="news/:id" element={<BlogPage />} />
+            <Route path="الأخبار/:id" element={<BlogPage />} />
             <Route path="search/?" element={<SearchResult />} />
           </Route>
 

@@ -29,9 +29,9 @@ const SideDrawer = ({ open, onClose ,sizes}) => {
         </IconContainer>
       </Toolbar>
       <List>
-        {["people", "capabilities", "about us", "insights", "careers"].map(
+        {[t("sideDrawer1"),t("sideDrawer2"),t("sideDrawer3"),t("sideDrawer4",t("sideDrawer5"))].map(
           (text, index) => (
-            <CustomListItem key={text} disablePadding>
+            <CustomListItem key={text} disablePadding  onClick={onClose}>
               <ListItemButton>
                 {/* <ListItemIcon>{index}</ListItemIcon> */}
                 <CustomListItemText
@@ -47,9 +47,9 @@ const SideDrawer = ({ open, onClose ,sizes}) => {
     {/* --------------------------------------------------------------------------- */}
 
     <CustomList sx={{display:"flex",flexDirection:sizes.md?"column":"column"}} >
-        {["locations", "news", "events"].map(
+        {[t("sideDrawer6"),t("sideDrawer7") ,t("sideDrawer8") ].map(
           (text, index) => (
-            <CustomListItem key={text} disablePadding>
+            <CustomListItem key={text} disablePadding  onClick={onClose}>
               <ListItemButton onClick={()=>navigate(`/${text}`,{replace:false})}>
                 {/* <ListItemIcon>{index}</ListItemIcon> */}
                 <CustomListItemText
