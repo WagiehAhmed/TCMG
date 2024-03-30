@@ -19,7 +19,7 @@ import { useStore } from "../../hooks/useStore";
 import EastIcon from '@mui/icons-material/East';
 import { useTranslation } from "react-i18next";
 const SectionNine = ({ sizes }) => {
-  const {i18n} = useTranslation();
+  const {t,i18n} = useTranslation();
   
   return (
     <CustomBox className="section-nine">
@@ -37,27 +37,30 @@ const SectionNine = ({ sizes }) => {
                 <CustomGrid item xs={1} className="form-item">
                   <CustomTextFeild
                     // label="الاسم"
-                    placeholder="الاسم*"
+                    placeholder={t("name")}
                     required
                     className="section-nine-form"
+                    dir="rtl"
                   />
                 </CustomGrid>
                 <CustomGrid item xs={1} className="form-item">
                   <CustomTextFeild
                     // label="البريد الألكتروني"
-                    placeholder="البريد الألكتروني*"
+                    placeholder={t("email")}
                     className="section-nine-form"
                     required
+                dir={i18n.dir(i18n.language)}
                   />
                 </CustomGrid>
                 <CustomGrid item xs={1} md={2} className="form-item">
                   <CustomTextFeild
                     // label="أكتب رسالتك هنا..."
-                    placeholder="أكتب رسالتك هنا..."
+                    placeholder={t("message")}
                     className="section-nine-form"
                     required
                     multiline
                     rows={5}
+                    dir={i18n.dir(i18n.language)}
                   />
                 </CustomGrid>
               </CustomGrid>
@@ -70,7 +73,7 @@ const SectionNine = ({ sizes }) => {
                   margin: sizes.md ? "15px 10px" : "30px 20px",
                 }}
               >
-                <CustomTypography>أرسال رسالة</CustomTypography>
+                <CustomTypography>{t("sendMessage")}</CustomTypography>
                 <IconContainer>
                 {i18n.dir(i18n.language)=="ltr"?<EastIcon/>:<KeyboardBackspaceIcon />}
                 </IconContainer>
